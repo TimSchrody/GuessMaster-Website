@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+  font-size: 3em;
+  text-align: center;
+  color: navy;
+}
+
+h2{
+  font-size: 2em;
+  text-align: center;
+  padding-top: 1.5em;
+}
+
+h3{
+  font-size: 1.3em;
+  text-align: center;
+  margin-top: 0em;
+  margin-bottom: 2em;
+}
+
+h4{
+  font-size: 3em;
+  text-align: center;
+  margin: 0;
+}
+
+text {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: lightgray;
+  padding: 20px;
+}
+
+highlighted {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: yellow;
+  padding: 20px;
+  font-size: 1.8em;
+}
+
+
+select_amount{
+  float: right;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 3px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+th{
+  background-color: lightgray;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+</head>
+<body>
+
+<h1>Hall of Fame</h1>
+
+<text>
+  We wanted to take a moment to thank all of our registered and unregistered GuessMaster players for their participation in our game. Your support is instrumental in making this game a success, and we're thrilled to see so many of you enjoying the game and questions we've put together. <br>
+  To show our gratitude, we've created this "Hall of fame" page whis is dedicated to highlight our best and most active players. We hope this will provide some recognition for all our players efforts and inspire you to continue playing and striving for the top spot. <br>
+  Thank you again for being a part of the GuessMaster community!
+</text>
+
+<highlighted>
+  Keep guessing!
+  <br>
+</highlighted>
+
+<select_amount>
+<label for="anzahl-spieler" float: right><br>Players to be displayed:</label>
+
+<select id="anzahl-spieler">
+  <option value="5">5</option>
+  <option value="10" selected>10</option>
+  <option value="25">25</option>
+  <option value="50">40</option>
+</select>
+
+</select_amount>
+  
+<table id='scoreboard'></table>
+
+
+<small>
+  Please note that we can only display registered players.
+  <a href="register.hbs">Register now</a> to keep track of your stats and climb our leaderboard. 
+</small>
+
+<h2>Some more stats:</h2>
+
+<h4 id='total_players'></h4>
+<h3>Total amount of players</h3>
+
+<h4 id='rounds_total'>123</h4>
+<h3>Total rounds played</h3>
+
+<h4 id='points_total'>123</h4>
+<h3>Total points gathered</h3>
+
+<h4 id='avg_ppr'>123</h4>
+<h3>Average points per round and player</h3>
+
+<script src="Stats/Stats.js"></script>
+</body>
+</html>
