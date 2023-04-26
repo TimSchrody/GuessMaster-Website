@@ -89,7 +89,7 @@ header{
 #section1{
     height: 100vh;
     width: 100%;
-    background-image: url('landscape_blue.jpg');
+    background-image: url('../../src/MainImages/landscape_blue.jpg');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
