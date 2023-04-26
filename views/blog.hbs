@@ -1,191 +1,345 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="Blog/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Blog/style.css" />
     <title>GuessMaster</title>
-</head>
-<body>
-    
+  </head>
+  <body>
+
     <div class="grid-container">
-        <h1>Header</h1>
+      <nav class="nav-bar">
+        <ul>
+          <li
+            onmouseover="cursorBig()"
+            onmouseout="cursorSmall()"
+            id="menu_active_site"
+          ><a href="">Playerstats</a></li>
+          <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a
+              href="/AboutUs"
+            >About Us</a></li>
+          <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a
+              href="/Blog"
+            >Blog</a></li>
+          <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a
+              href="/ContactUS"
+            >Contact</a></li>
+          <li
+            onmouseover="cursorBig()"
+            onmouseout="cursorSmall()"
+            id="menu_play_now"
+          ><a href="">Play Now</a></li>
+
+        </ul>
+      </nav>
     </div>
 
     <div class="grid-container">
-        <h1>Our Blog</h1>
+      <h1>Our Blog</h1>
     </div>
 
-    <div class="grid-container timeline">
-        <div class="container right">
-            <div class="content">
-            
-                <h1><span style="color:rgb(173, 11, 11);">Week 1:</span> Guess What? Hello World! 🌍</h1>
-                <p>GuessMaster is all about fun. 🤩 Fun getting to know each other and getting together, fun playing and competing.
-                    <br><br>
-                    Our project simply can't do without fun and we want to design our blog accordingly.
-                    <br><br>
-                    We've found that all the work we do in the home office makes it difficult to "really" get to know our colleagues. Among the students, we got together and exchanged ideas over relaxed mini-games, which also allowed us to get to know each other privately. The minigames encouraged us to exchange ideas. 
-                    <br>
-                    We would now like to contribute to this ourselves by creating a web-based mini-game. Various questions are to be answered and the players receive points depending on their answers. 
-                    <br>
-                    We will probably implement the project with Unity in C#. The game server will initially be hosted by photon (photonengine.com).
-                    <br><br>
-                    Our team consists of:
-                    <ul>
-                        Tim G.: Backend-Dev
-                        <br>
-                        Tim S.: Backend-Dev
-                        <br>
-                        Marius M.: Product-Owner, Dev-Support
-                        <br>
-                        Daniel S.: Frontend-Dev
-                        <br>
-                        Daniel K.: Scrum-Master, Frontend-Dev
-                    </ul>
-                    <br>
-                    We work in weekly sprints and record our tasks in Azure DevOps. In addition to review, retro and planning, we want to exchange the current status twice a week in dailies. 
-                    <br><br><br>
-                    P.S. For the sake of necessity, we attach a picture from the backlog.
-                    <br><br>
-                    <img src="/Blog/src/BlogImages/backlog.png" alt="Our Backlog">
-                    <br><br>
-                    We look forward to your comments and suggestions. 😎
-                    <br><br>
-                    GuessMaster-Team
-                </p>
-            
-            </div>
-        </div>
-        <div class="container right">
-                <div class="content">
-            
-                <h1><span style="color:rgb(173, 11, 11);">Week 2:</span> Still Guessing...</h1>
-                <p>
-                    Yep, we're still guessing. While we're not 100% sure about all the functionalities we'll include in our GuessMaster Webgame, we can tell you this: It'll be a fun minigame! 
-                    <br>
-                    Starting from our landing page our players will have to add their name (or alias) and can then choose from one of three options. When clicking on "Quick Game" they either join an ongoing public game or a public lobby with predefined settings will be opened. Joining a private game for guessing with e.g. friends or colleagues is easy, all you need to know is a code, enter it in the textbox and click on "Join now". If a player wants to create a lobby with custom settings, he/she can do so by simply clicking on the corresponding button. The player will then have some options, including the possibility to choose between a public or private game.
-                    <br>
-                    We'll continue explaining one of the other Mockups in our next blog entry.
-                    <br><br>
-                    In the past weeks we also used our time to get to know our tool of choice, unity. Each of us started off with a tutorial and then continued developing a simple something in Unity.
-                    <br>
-                    In our ongoing sprint we created and refined our Use Case and finished our first Mockups. You'll find a Mockup of our landingpage down below.
-                    <br><br>
-                    By the way: Our 
-                    <a href="https://github.com/Tiaaam/GuessMaster/blob/master/docs/SoftwareRequirementsSpecification.md">SRS</a>
-                    is online.
-                    <br><br>
-                    <img src="/Blog/src/BlogImages/landingpage.png" alt="Our landingpage">
-                    <br><br>
-                    We look forward to your comments and suggestions. 😎
-                    <br><br>
-                    GuessMaster-Team
-                </p>
-            
-            </div>
-        </div>
-        <div class="container right">
-            <div class="content">
-            
-                <h1><span style="color:rgb(173, 11, 11);">Week 3:</span> Less Guessing, more clarity.</h1>
-                <p>
-                    This week we managed to gain some clarity about the background processes that we will need by creating our activity diagrams and Use-Case-Realization Specifications. We hope they are self-explanatory and kindly ask you to comment any upcoming question so we can then improve those in the future. You can find them all on our Github in the "docs" folder or one example of each in the following pictures. (Link below. They're linked at 3.1.x of our  SRS or on those sub pages.) Based on that knowledge we started coding some small pieces.
-                    <br><br>
-                    <a href="https://github.com/Tiaaam/GuessMaster/blob/master/docs/SoftwareRequirementsSpecification.md#3-specific-requirements">Specific Requirements</a>
-                    <br>
-                    <a href="https://github.com/Tiaaam/GuessMaster/blob/master/docs/UCRS_Gamemode_Selection.md">Use-Case-Realization Specification</a>
-                    <br><br>
-                    <img src="/Blog/src/BlogImages/activitydiagram.png" alt="Our activity-diagramm">
-                    <img src="/Blog/src/BlogImages/sequencediagram.png" alt="Our sequence-diagramm">
-                    <br><br>
-                    We promised to explain our mockups in our blog, so here we go:
-                    <br>
-                    In this blog we'll take a look at our "settings". This page's purpose solely lies in giving our users the possibility to create games with their preferred settings. 
-                    <br>
-                    In our settings-menu the user can change the gamemode, total rounds played, player capacity of the lobby and the maximum allowed time for guessing the answers to our questions. We plan to implement these options as drop-down-menus. Additionally, the user can also choose to create the lobby as a public lobby or to be only accessible with a code (private game). All options will be filled with default values at the beginning.
-                    <br>
-                    After selecting the desired settings, the lobby can be created via "Create Lobby". The user can also leave the settings at any time and return to our gamemode selection.
-                    <br><br>
-                    <img src="/Blog/src/BlogImages/settingsmockup.png" alt="Our settings-mockup">
-                    <br><br>
-                    We look forward to your comments and suggestions. 😎
-                    <br><br>
-                    GuessMaster-Team
-                </p>
-            </div>
-        </div>
-        <div class="container right">
-            <div class="content">
+    <div
+      class="grid-container timeline"
+      style="background-image: url('/Main/src/MainImages/landscape_blue.jpg');background-attachment:fixed;background-position: center;background-repeat: no-repeat;"
+    >
+      <div class="container right">
+        <div class="content">
 
-                <h1><span style="color:rgb(173, 11, 11);">Week 4:</span> Time for another Update</h1>        
-                <p>
-                    This week we finished our class diagram (attached below) and made some small adjustments to our sequence diagrams. The adjustments were so minor that it wouldn't justify displaying them here, so please go check them out at our GitHub if you're interested in those details.
-                    <br>
-                    We used the OCP (Open-Closed Principle) for our design as it is the most fitting one for a game as it is open for additions while not allowing changes in the "running" program.
-                    <br>
-                    Our most important class is the "LobbyController" because of its necessity for joining and creating a game. It is also worth mentioning that none of the classes is completely finished as of now  because we're not absolutely sure about all the functions we require.
-                    <br><br>
-                    <img src="/Blog/src/BlogImages/classdiagramm.png" alt="Our class diagram">
-                    <br><br>
-                    Let's continue with a quick look at one of our mockups: The Lobby.
-                    <br>
-                    On the picture below you can see the mockup from a player's view. It's simple and straight forward while showing all the details you need to know. In the center we plan to show our Logo and the gamecode below, so you can always tell your friends in which lobby they need to join to be able to guess with you. A list of all players, led by the lobby's creator is shown beneath. The left-hand side shows all the important information about your chosen settings. Additionally, a short description of your gamemode is available on the right-hand side. While "normal" players can only see one button in the bottom left corner to leave the lobby, the creator will have a second button to start the game.
-                    <br><br>
-                    <img src="/Blog/src/BlogImages/lobbymockup.png" alt="Our Lobby Mockup">
-                    <br><br>
-                    We look forward to your comments and suggestions. 😎
-                    <br><br>
-                    GuessMaster-Team
-                </p>
-            
-            </div>
+          <h1><span style="color:rgb(173, 11, 11);">Week 1:</span>
+            Guess What? Hello World! 🌍</h1>
+          <p>GuessMaster is all about fun. 🤩 Fun getting to know each other and
+            getting together, fun playing and competing.
+            <br /><br />
+            Our project simply can't do without fun and we want to design our
+            blog accordingly.
+            <br /><br />
+            We've found that all the work we do in the home office makes it
+            difficult to "really" get to know our colleagues. Among the
+            students, we got together and exchanged ideas over relaxed
+            mini-games, which also allowed us to get to know each other
+            privately. The minigames encouraged us to exchange ideas.
+            <br />
+            We would now like to contribute to this ourselves by creating a
+            web-based mini-game. Various questions are to be answered and the
+            players receive points depending on their answers.
+            <br />
+            We will probably implement the project with Unity in C#. The game
+            server will initially be hosted by photon (photonengine.com).
+            <br /><br />
+            Our team consists of:
+            <ul>
+              Tim G.: Backend-Dev
+              <br />
+              Tim S.: Backend-Dev
+              <br />
+              Marius M.: Product-Owner, Dev-Support
+              <br />
+              Daniel S.: Frontend-Dev
+              <br />
+              Daniel K.: Scrum-Master, Frontend-Dev
+            </ul>
+            <br />
+            We work in weekly sprints and record our tasks in Azure DevOps. In
+            addition to review, retro and planning, we want to exchange the
+            current status twice a week in dailies.
+            <br /><br /><br />
+            P.S. For the sake of necessity, we attach a picture from the
+            backlog.
+            <br /><br />
+            <img src="/Blog/src/BlogImages/backlog.png" alt="Our Backlog" />
+            <br /><br />
+            We look forward to your comments and suggestions. 😎
+            <br /><br />
+            GuessMaster-Team
+          </p>
+
         </div>
-        <div class="container right">
-            <div class="content">
-            
-                <h1><span style="color:rgb(173, 11, 11);">Week 5:</span> It begins to look a lot like... something</h1>
-                <p>
-                    The heading has been program this week.
-                    <br>
-                    Our backend and frontend have gotten a lot better within this week.
-                    <br>
-                    We now have a running demo which includes all steps from our homescreen to playing the game. That includes creating a game, joining a game (by code), gameroom ("lobby") and the game itself (question-answering, "Guessing").
-                    <br>
-                    That means: it is possible for players to create a game and for others to join that game. The creator can start the game and exemplary questions can be answered. So basically, our core-functionalitites are working. 🎉
-                    <br>
-                    However, we still have quite some work to do. For example we need to add options and some scenes as well as more questions. 
-                    <br><br>
-                    As planned, Tim G. worked on the backend together with Tim S. and Marius M. They programmed the options to create a game (with standard settings) and for others to join the same gameroom. They also researched options to automatically add fitting questions. Daniel S. and Daniel K. started off with the frontend of our gameroom. You can find previews of our gameroom below.
-                    <br><br>
-                    (Because we developed a majority of our frontend of the gameroom, we will not explain that mockup in our blog.)
-                    <br><br>
-                    <img src="../../src/BlogImages/gameroompreview1.png" alt="Gameroom preview 1">
-                    <img src="../../src/BlogImages/gameroompreview2.png" alt="Gameroom preview 2">
-                    <br><br>
-                    We look forward to your comments and suggestions. 😎
-                    <br><br>
-                    GuessMaster-Team
-                </p>
-            
-            </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+
+          <h1><span style="color:rgb(173, 11, 11);">Week 2:</span>
+            Still Guessing...</h1>
+          <p>
+            Yep, we're still guessing. While we're not 100% sure about all the
+            functionalities we'll include in our GuessMaster Webgame, we can
+            tell you this: It'll be a fun minigame!
+            <br />
+            Starting from our landing page our players will have to add their
+            name (or alias) and can then choose from one of three options. When
+            clicking on "Quick Game" they either join an ongoing public game or
+            a public lobby with predefined settings will be opened. Joining a
+            private game for guessing with e.g. friends or colleagues is easy,
+            all you need to know is a code, enter it in the textbox and click on
+            "Join now". If a player wants to create a lobby with custom
+            settings, he/she can do so by simply clicking on the corresponding
+            button. The player will then have some options, including the
+            possibility to choose between a public or private game.
+            <br />
+            We'll continue explaining one of the other Mockups in our next blog
+            entry.
+            <br /><br />
+            In the past weeks we also used our time to get to know our tool of
+            choice, unity. Each of us started off with a tutorial and then
+            continued developing a simple something in Unity.
+            <br />
+            In our ongoing sprint we created and refined our Use Case and
+            finished our first Mockups. You'll find a Mockup of our landingpage
+            down below.
+            <br /><br />
+            By the way: Our
+            <a
+              href="https://github.com/Tiaaam/GuessMaster/blob/master/docs/SoftwareRequirementsSpecification.md"
+            >SRS</a>
+            is online.
+            <br /><br />
+            <img
+              src="/Blog/src/BlogImages/landingpage.png"
+              alt="Our landingpage"
+            />
+            <br /><br />
+            We look forward to your comments and suggestions. 😎
+            <br /><br />
+            GuessMaster-Team
+          </p>
+
         </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+
+          <h1><span style="color:rgb(173, 11, 11);">Week 3:</span>
+            Less Guessing, more clarity.</h1>
+          <p>
+            This week we managed to gain some clarity about the background
+            processes that we will need by creating our activity diagrams and
+            Use-Case-Realization Specifications. We hope they are
+            self-explanatory and kindly ask you to comment any upcoming question
+            so we can then improve those in the future. You can find them all on
+            our Github in the "docs" folder or one example of each in the
+            following pictures. (Link below. They're linked at 3.1.x of our SRS
+            or on those sub pages.) Based on that knowledge we started coding
+            some small pieces.
+            <br /><br />
+            <a
+              href="https://github.com/Tiaaam/GuessMaster/blob/master/docs/SoftwareRequirementsSpecification.md#3-specific-requirements"
+            >Specific Requirements</a>
+            <br />
+            <a
+              href="https://github.com/Tiaaam/GuessMaster/blob/master/docs/UCRS_Gamemode_Selection.md"
+            >Use-Case-Realization Specification</a>
+            <br /><br />
+            <img
+              src="/Blog/src/BlogImages/activitydiagram.png"
+              alt="Our activity-diagramm"
+            />
+            <img
+              src="/Blog/src/BlogImages/sequencediagram.png"
+              alt="Our sequence-diagramm"
+            />
+            <br /><br />
+            We promised to explain our mockups in our blog, so here we go:
+            <br />
+            In this blog we'll take a look at our "settings". This page's
+            purpose solely lies in giving our users the possibility to create
+            games with their preferred settings.
+            <br />
+            In our settings-menu the user can change the gamemode, total rounds
+            played, player capacity of the lobby and the maximum allowed time
+            for guessing the answers to our questions. We plan to implement
+            these options as drop-down-menus. Additionally, the user can also
+            choose to create the lobby as a public lobby or to be only
+            accessible with a code (private game). All options will be filled
+            with default values at the beginning.
+            <br />
+            After selecting the desired settings, the lobby can be created via
+            "Create Lobby". The user can also leave the settings at any time and
+            return to our gamemode selection.
+            <br /><br />
+            <img
+              src="/Blog/src/BlogImages/settingsmockup.png"
+              alt="Our settings-mockup"
+            />
+            <br /><br />
+            We look forward to your comments and suggestions. 😎
+            <br /><br />
+            GuessMaster-Team
+          </p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+
+          <h1><span style="color:rgb(173, 11, 11);">Week 4:</span>
+            Time for another Update</h1>
+          <p>
+            This week we finished our class diagram (attached below) and made
+            some small adjustments to our sequence diagrams. The adjustments
+            were so minor that it wouldn't justify displaying them here, so
+            please go check them out at our GitHub if you're interested in those
+            details.
+            <br />
+            We used the OCP (Open-Closed Principle) for our design as it is the
+            most fitting one for a game as it is open for additions while not
+            allowing changes in the "running" program.
+            <br />
+            Our most important class is the "LobbyController" because of its
+            necessity for joining and creating a game. It is also worth
+            mentioning that none of the classes is completely finished as of now
+            because we're not absolutely sure about all the functions we
+            require.
+            <br /><br />
+            <img
+              src="/Blog/src/BlogImages/classdiagramm.png"
+              alt="Our class diagram"
+            />
+            <br /><br />
+            Let's continue with a quick look at one of our mockups: The Lobby.
+            <br />
+            On the picture below you can see the mockup from a player's view.
+            It's simple and straight forward while showing all the details you
+            need to know. In the center we plan to show our Logo and the
+            gamecode below, so you can always tell your friends in which lobby
+            they need to join to be able to guess with you. A list of all
+            players, led by the lobby's creator is shown beneath. The left-hand
+            side shows all the important information about your chosen settings.
+            Additionally, a short description of your gamemode is available on
+            the right-hand side. While "normal" players can only see one button
+            in the bottom left corner to leave the lobby, the creator will have
+            a second button to start the game.
+            <br /><br />
+            <img
+              src="/Blog/src/BlogImages/lobbymockup.png"
+              alt="Our Lobby Mockup"
+            />
+            <br /><br />
+            We look forward to your comments and suggestions. 😎
+            <br /><br />
+            GuessMaster-Team
+          </p>
+
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+
+          <h1><span style="color:rgb(173, 11, 11);">Week 5:</span>
+            It begins to look a lot like... something</h1>
+          <p>
+            The heading has been program this week.
+            <br />
+            Our backend and frontend have gotten a lot better within this week.
+            <br />
+            We now have a running demo which includes all steps from our
+            homescreen to playing the game. That includes creating a game,
+            joining a game (by code), gameroom ("lobby") and the game itself
+            (question-answering, "Guessing").
+            <br />
+            That means: it is possible for players to create a game and for
+            others to join that game. The creator can start the game and
+            exemplary questions can be answered. So basically, our
+            core-functionalitites are working. 🎉
+            <br />
+            However, we still have quite some work to do. For example we need to
+            add options and some scenes as well as more questions.
+            <br /><br />
+            As planned, Tim G. worked on the backend together with Tim S. and
+            Marius M. They programmed the options to create a game (with
+            standard settings) and for others to join the same gameroom. They
+            also researched options to automatically add fitting questions.
+            Daniel S. and Daniel K. started off with the frontend of our
+            gameroom. You can find previews of our gameroom below.
+            <br /><br />
+            (Because we developed a majority of our frontend of the gameroom, we
+            will not explain that mockup in our blog.)
+            <br /><br />
+            <img
+              src="/Blog/src/BlogImages/gameroompreview1.png"
+              alt="Gameroom preview 1"
+            />
+            <img
+              src="/Blog/src/BlogImages/gameroompreview2.png"
+              alt="Gameroom preview 2"
+            />
+            <br /><br />
+            We look forward to your comments and suggestions. 😎
+            <br /><br />
+            GuessMaster-Team
+          </p>
+
+        </div>
+      </div>
+
+      <div class="container right">
+        <div class="content">
+
+          <h1><span style="color:rgb(173, 11, 11);">Week 6:</span>
+            Coming soon...</h1>
+        </div>
+      </div>
     </div>
 
     <div class="grid-footer">
+      <div class="footerlink">
         <ul>
-            <li><a href="index.html">About us</a></li>
-            <li><a href="mailto:guessmaster.webgame@gmail.com">Contact us</a></li>
-            <li><a href="https://github.com/Tiaaam/GuessMaster">Our GitHub</a></li>
-            <li>
-                <p>Germany
-                <br><br>
-                Copyright © 2023 GuessMaster Team. All rights reserved.
-                <br>
-                DHBW Karlsruhe</p>
-            </li>
+          <li><a href="/AboutUs">About us</a></li>
+          <li><a href="mailto:guessmaster.webgame@gmail.com">Contact us</a></li>
+          <li><a href="https://github.com/Tiaaam/GuessMaster">Our GitHub</a></li>
         </ul>
+      </div>
+      <ul>
+        <li>
+          <p>Germany
+            <br /><br />
+            Copyright © 2023 GuessMaster Team. All rights reserved.
+            <br />
+            DHBW Karlsruhe</p>
+        </li>
+      </ul>
     </div>
 
     <script src="blog.js"></script>
 
-</body>
+  </body>
 </html>

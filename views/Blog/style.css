@@ -1,151 +1,183 @@
 .grid-container {
-    padding: 0.5em;
-    font-size: 15px;
-    border-style: double;
-  }
-  
-  .grid-container h1 {
-    color: dimgray;
-    text-align: left;
-  }
-  
-  .grid-footer {
-    padding: 0.5em;
-    font-size: 15px;
-    border-style: double;
-    background-color: rgb(66, 70, 73);
-  }
-  
-  .grid-footer ul {
-    list-style-type: none;
+  padding: 0.5em;
+  font-size: 15px;
+  border-style: double;
+}
+
+.grid-container h1 {
+  color: dimgray;
+  text-align: left;
+}
+
+.grid-footer {
+  padding: 0.5em;
+  font-size: 15px;
+  border-style: double;
+  background-color: rgb(66, 70, 73);
+}
+
+.grid-footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.grid-footer p {
+  display: block;
+  text-align: left;
+  padding: 14px 16px;
+  color: rgb(121, 129, 136);
+}
+
+.grid-footer li a {
+  display: block;
+  text-align: left;
+  padding: 14px 16px;
+  color: white;
+  text-decoration: none;
+}
+.grid-footer li:hover {
+  background-color: black;
+}
+
+.footerlink ul {
+  display: inline-block;
+}
+
+.footerlink li {
+  float: left;
+}
+
+img {
+  max-width: 55%;
+  height: auto;
+}
+
+/* ab hier aus internet + geändert */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #a1a7b4;
+  font-family: Helvetica, sans-serif;
+}
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 3%;
+}
+
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 95%;
+  left: 3%;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #ff9f55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.right::before {
+  content: "";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+.right::after {
+  left: -20px;
+}
+
+.content {
+  padding: 20px 50px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+.content:hover {
+  background-color: rgb(241, 232, 232);
+}
+
+/* ab hier von Tim G. */
+.nav-bar ul {
+  display: flex;
+}
+
+.nav-bar ul li a {
+  display: block;
+  color: var(--dark);
+  font-size: 20px;
+  padding: 10px 25px;
+
+  transition: 0.2s;
+  margin: 0 5px;
+}
+
+@media only screen and (max-width: 900px) {
+  .nav-bar {
     margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-  
-  .grid-footer p {
-    display: block;
-    text-align: left;
-    padding: 14px 16px;
-    color:rgb(121, 129, 136);
-  }
-  
-  .grid-footer li a {
-    display: block;
-    text-align: left;
-    padding: 14px 16px;
-    color: white;
-    text-decoration: none;
-  }
-  .grid-footer li:hover {
-    background-color: black;
-  }
-  
-  img {
-    max-width: 55%;
-    height: auto;
-  }
-  
-  /* ab hier aus internet + geändert */
-  
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: #a1a7b4;
-    font-family: Helvetica, sans-serif;
-  }
-  
-  .timeline {
-    position: relative;
-    margin: 0 auto;
-  }
-  
-  .timeline::after {
-    content: '';
     position: absolute;
-    width: 6px;
-    background-color: white;
     top: 0;
-    bottom: 0;
-    left: 3%;
-  }
-  
-  .container {
-    padding: 10px 40px;
-    position: relative;
-    background-color: inherit;
-    width: 95%;
-    left: 3%
-  }
-  
-  .container::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    right: -17px;
-    background-color: white;
-    border: 4px solid #FF9F55;
-    top: 15px;
-    border-radius: 50%;
-    z-index: 1;
-  }
-  
-  .right::before {
-    content: '';
+    left: 0;
+    right: 0;
+    width: 100vw;
     height: 0;
-    position: absolute;
-    top: 22px;
-    width: 0;
-    z-index: 1;
-    left: 30px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
+    background: var(--white);
+    transition: 0.2s;
+    overflow: hidden;
+    border-bottom: none 2px var(--dark);
   }
-  
-  .right::after {
-    left: -20px;
+
+  .nav-bar.active {
+    height: 450px;
+    border-bottom: solid 2px var(--dark);
   }
-  
-  .content {
-    padding: 20px 50px;
-    background-color: white;
-    position: relative;
-    border-radius: 6px;
+
+  .nav-bar ul {
+    display: block;
+    width: fit-content;
+    margin: 80px auto 0 auto;
+    text-align: center;
+    transition: 0.5s;
+    opacity: 0;
   }
-  
-  .content:hover {
-    background-color: rgb(241, 232, 232);
+
+  .nav-bar.active ul {
+    opacity: 1;
   }
-  
-  /* Was macht das? */
-  
-  /* @media screen and (max-width: 600px) {
-    .timeline::after {
-      left: 31px;
-    }
-  
-    .container {
-      width: 100%;
-      padding-left: 70px;
-      padding-right: 25px;
-    }
-  
-    .container::before {
-      left: 60px;
-      border: medium solid white;
-      border-width: 10px 10px 10px 0;
-      border-color: transparent white transparent transparent;
-    }
-  
-    .left::after, .right::after {
-      left: 15px;
-    }
-    .right {
-      left: 0%;
-    }
-  } */
+
+  .nav-bar ul li a {
+    margin-bottom: 12px;
+  }
+}
