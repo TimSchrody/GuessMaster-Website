@@ -17,8 +17,8 @@ router.get("", (req,res) => {
     res.render("Main");
 });
 
-router.get("/", (req,res) => {
-    res.render("Main");
+router.get("/Profile", (req,res) => {
+    res.render("Profile");
 });
 
 //Export the router
