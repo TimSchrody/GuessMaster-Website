@@ -16,7 +16,8 @@
 </head>
 <body>
     <div class="cursor"></div>
-    <header>
+    <div class="cursor2"></div>
+    <div class="header">
         <a onmouseover="cursorBig()" onmouseout="cursorSmall()" id="logo" href="#"><img src="/Main/src/MainImages/logo.png" alt="Logo"></a>
         <div id="hamburger">
             <div class="line"></div>
@@ -25,15 +26,15 @@
         </div>
         <nav class="nav-bar">
             <ul>
-                <li onmouseover="cursorBig()" onmouseout="cursorSmall()" id="menu_active_site"><a href="">Playerstats</a></li>
                 <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/AboutUs">About Us</a></li>
                 <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/Blog">Blog</a></li>
                 <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/ContactUS">Contact</a></li>
-                <li onmouseover="cursorBig()" onmouseout="cursorSmall()" id="menu_play_now"><a href="">Play Now</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()" id="menu_active_site"><a href="">Stats</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()" id="menu_play_now"><a href="">Profile</a></li>
                 
             </ul>
         </nav>
-    </header>
+    </div>
     <!---HIER KOMMT DIE WEBSITE HIN-->
     <div id="section1">
         <div id="section1_content">
@@ -66,7 +67,7 @@
     </div>
     <div id="section3">
         <h4>Global</h4>
-        <h1>PLAYERSTATISTICS</h1>
+        <h1>PLAYER STATS</h1>
         <div id="section3_content">
             <div class="sec3_box">
               <img src="/Main/src/MainImages/gameround.png">
@@ -83,7 +84,15 @@
               <span class="sec3_data" data-val="225">000</span>
               <span class="sec3_datatext">Active Players</span>
             </div>
-          </div>
+        </div>
+        <p>Möchtest du deine persöhnlichen Spielerstatistiken einsehen? <br> Klicke hier und erhalte alle deine eigenen Spielerdaten</p>
+        <a onmouseover="cursorBig()" onmouseout="cursorSmall()" href="#">My Playerstats</a>
+    </div>
+    <div id="section4">
+
+    </div>
+    <div id="section5">
+
     </div>
     <script src="Main/main.js"></script>
 
