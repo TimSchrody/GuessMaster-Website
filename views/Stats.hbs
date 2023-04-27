@@ -1,126 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-h1 {
-  font-size: 3em;
-  text-align: center;
-  color: navy;
-}
-
-h2{
-  font-size: 2em;
-  text-align: center;
-  padding-top: 1.5em;
-}
-
-h3{
-  font-size: 1.3em;
-  text-align: center;
-  margin-top: 0em;
-  margin-bottom: 2em;
-}
-
-h4{
-  font-size: 3em;
-  text-align: center;
-  margin: 0;
-}
-
-text {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  background-color: lightgray;
-  padding: 20px;
-}
-
-highlighted {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  background-color: yellow;
-  padding: 20px;
-  font-size: 1.8em;
-}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Stats/style.css">
+    <title>GuessMaster</title>
 
 
-select_amount{
-  float: right;
-}
-
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th, td {
-  border: 3px solid #dddddd;
-  text-align: center;
-  padding: 8px;
-}
-
-th{
-  background-color: lightgray;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
-
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
 </head>
 <body>
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
+    <div class="header">
+        <a onmouseover="cursorBig()" onmouseout="cursorSmall()" id="logo" href="#"><img src="/Stats/src/MainImages/logo.png" alt="Logo"></a>
+        <div id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/AboutUs">About Us</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/Blog">Blog</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/ContactUS">Contact</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()" id="menu_active_site"><a href="">Stats</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()" id="menu_play_now"><a href="">Profile</a></li>
+                
+            </ul>
+        </nav>
+    </div>
 
-<h1>Hall of Fame</h1>
+<!-- - - - - - - - - - - - - - - - - Content - - - - - - - - - - - - - - - - -->
 
-<text>
-  We wanted to take a moment to thank all of our registered and unregistered GuessMaster players for their participation in our game. Your support is instrumental in making this game a success, and we're thrilled to see so many of you enjoying the game and questions we've put together. <br>
-  To show our gratitude, we've created this "Hall of fame" page whis is dedicated to highlight our best and most active players. We hope this will provide some recognition for all our players efforts and inspire you to continue playing and striving for the top spot. <br>
-  Thank you again for being a part of the GuessMaster community!
-</text>
+    <div id="section1">
+      <div id="section1_content">
+        <h1>Hall of Fame</h1>
+        <pb>Thank you for being a part of the GuessMaster community!</pb>
+      </div>
+    </div> 
 
-<highlighted>
-  Keep guessing!
-  <br>
-</highlighted>
+    <div id="section2">
+      <h1>STATS</h1>
+      <hr></hr>
+      <div id="section2_content">
+        <div id="sec2_left">
+          <h1 id='total_players'></h1>
+          <h2>Total amount of players</h2>
+          <h1 id='rounds_total'></h1>
+          <h2>Total rounds played</h2>
+          <h1 id='points_total'></h1>
+          <h2>Total points gathered</h2>
+          <h1 id='avg_ppr'></h1>
+          <h2>Average points per round and player</h2>
+        </div>
+          <div id="sec2_thanks">
+            We wanted to take a moment to thank all of our registered and unregistered GuessMaster players for their participation in our game. Your support is instrumental in making this game a success, and we're thrilled to see so many of you enjoying the game and questions we've put together. <br>
+            To show our gratitude, we've created this "Hall of fame" page whis is dedicated to highlight our best and most active players. We hope this will provide some recognition for all our players efforts and inspire you to continue playing and striving for the top spot. <br>
+            <h2>Keep guessing!</h2>
+          </div>
+      </div>
+    </div>
 
-<select_amount>
-<label for="anzahl-spieler" float: right><br>Players to be displayed:</label>
-
-<select id="anzahl-spieler">
-  <option value="5">5</option>
-  <option value="10" selected>10</option>
-  <option value="25">25</option>
-  <option value="50">40</option>
-</select>
-
-</select_amount>
-  
-<table id='scoreboard'></table>
-
-
-<small>
+    <div id="section3">
+      <h4>Global</h4>
+      <h1>LEADERBOARD</h1>
+      <selectamount>
+        <label for="anzahl-spieler" float: right><br>Players to be displayed:</label>
+        <select onmouseover="cursorBig()" onmouseout="cursorSmall()" id="anzahl-spieler">
+          <option value="5">5</option>
+          <option value="10" selected>10</option>
+          <option value="25">25</option>
+          <option value="50">40</option>
+        </select>
+      </selectamount>
+      <div id="section3_content">   
+      <div id="section3_table"></div>
+      </div>
+      <small>
   Please note that we can only display registered players.
-  <a href="register.hbs">Register now</a> to keep track of your stats and climb our leaderboard. 
+  <a onmouseover="cursorBig()" onmouseout="cursorSmall()" href="register.hbs">Register now</a> to keep track of your stats and climb our leaderboard. 
 </small>
-
-<h2>Some more stats:</h2>
-
-<h4 id='total_players'></h4>
-<h3>Total amount of players</h3>
-
-<h4 id='rounds_total'>123</h4>
-<h3>Total rounds played</h3>
-
-<h4 id='points_total'>123</h4>
-<h3>Total points gathered</h3>
-
-<h4 id='avg_ppr'>123</h4>
-<h3>Average points per round and player</h3>
+        <p>Would you like to check out your personal stats?</p>
+        <a2 onmouseover="cursorBig()" onmouseout="cursorSmall()" href="#">My Playerstats</a2>
+    </div>
 
 <script src="Stats/Stats.js"></script>
 </body>

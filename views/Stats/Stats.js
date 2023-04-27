@@ -41,19 +41,19 @@ const player_scores = [
     [40, 39, 'Mjölnir', '3835', '29']
   ];
   
-  /*------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------*/
   
   //Anzahl anzuzeigender Spieler
   var amt_playershow = document.getElementById("anzahl-spieler");
   // Tabelle mit ID "scoreboard" in html suchen
-  var tablecontainer = document.getElementById("scoreboard");
+  var tablecontainer = document.getElementById("section3_table");
   //andere stats
   var total_players = document.getElementById("total_players");
   var rounds_total = document.getElementById("rounds_total");
   var points_total = document.getElementById("points_total");
   var avg_ppr = document.getElementById("avg_ppr");
   
-  /*------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------*/
   
   var amt_show = amt_playershow.value;
   amt_playershow.addEventListener("change", () => {
@@ -109,7 +109,7 @@ const player_scores = [
     tablecontainer.appendChild(table);
   })
   
-  /*------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------*/
   
   // HTML-Tabelle erstellen
   const table = document.createElement('table');
@@ -156,7 +156,7 @@ const player_scores = [
   //Tabelle in HTML einfügen
   tablecontainer.appendChild(table);
   
-  /*------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------*/
   
   player_id_max = 0;
   for (let index = 0; index < player_scores.length; index++) {
@@ -178,3 +178,41 @@ const player_scores = [
   
   ppr = (points_sum/rounds_sum).toFixed(0);
   avg_ppr.textContent = ppr;
+
+/*------------------------------------------------------------------------------------------------------------------*/
+hamburger = document.querySelector("#hamburger");
+hamburger.onclick = function(){
+    navBar = document.querySelector(".nav-bar");
+    navBar.classList.toggle("active");
+}
+
+function cursorBig(){
+  document.querySelector(".cursor").classList.toggle("increase");
+  document.querySelector(".cursor2").classList.toggle("increase");
+}
+function cursorSmall(){
+  document.querySelector(".cursor").classList.toggle("increase");
+  document.querySelector(".cursor2").classList.toggle("increase");
+}
+
+const cursor = document.querySelector(".cursor");
+document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY+ "px";
+})
+
+const cursor2 = document.querySelector(".cursor2");
+document.addEventListener("mousemove", (e) => {
+    cursor2.style.left = e.clientX + "px";
+    cursor2.style.top = e.clientY+ "px";
+})
+
+const header = document.querySelector(".header");
+window.addEventListener("scroll", function(){
+    if(window.scrollY==0){
+      //user is at the top of the page; no need to show the back to top button
+        header.classList.remove("scroll")
+    } else {
+        header.classList.add("scroll")
+    }
+});
