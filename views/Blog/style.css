@@ -106,10 +106,42 @@ body{
   border-color: transparent;
 }
 
+/* ab hier eigenes */
+
+#heading {
+  height: 400px;
+  width: 100%;
+  background-image: url('/Main/src/MainImages/landscape_yellow.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#heading_content{
+  text-align: center;
+  color: var(--dark);
+  margin-top: -50px;
+}
+
+#heading_content h1{
+  font-size: 100px;
+  font-weight: bold;
+  color: var(--dark);
+  margin-top: 150px;
+}
+
+#heading_content p{
+  margin: 20px 0 40px 0;
+  font-size: 18px;
+}
+
 .grid-container {
   padding: 0.5em;
   font-size: 15px;
-  border-style: double;
 }
 
 .grid-container h1 {
