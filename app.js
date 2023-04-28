@@ -1,11 +1,13 @@
 const express = require("express");
 const path = require('path');
+const mysql = require("mysql2");
+const dotenv = require("dotenv");
+
+dotenv.config({ path: './.env'});
 const app = express();
 
-const rout = require("./routes/routes.js");
-
 //Routes ...
-app.use("", rout);
+app.use("", require("./routes/routes.js"));
 
 //neccessairy for style.css
 const publicDirectory = path.join(__dirname + '/views');

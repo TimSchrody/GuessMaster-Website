@@ -1,0 +1,39 @@
+body {
+  background-color: #EAE2D6;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #D5C3AA;
+  border-radius: 10px;
+  height: 80px;
+}
+
+nav h1 {
+  margin-left: 10px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 20px;
+  padding: 0;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #867666;
+}
+
+nav a:hover {
+  background-color: #555;
+}
