@@ -117,7 +117,7 @@ function updateMatchHistory(){
 
 
 //test
-setUsername("TheValdez123");
+//setUsername("TheValdez123");
 setWinCount(5);
 setGameCount(10);
 setPointCount(453);

@@ -32,7 +32,7 @@
                 <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/Blog">Blog</a></li>
                 <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/ContactUS">Contact</a></li>
                 <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/Stats">Stats</a></li>
-                <li onmouseover="cursorBig()" onmouseout="cursorSmall()" id="menu_play_now"><a href="/Login">Profile</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()" id="menu_play_now"><a href="/Logout">Logout</a></li>
                 
             </ul>
         </nav>
@@ -47,7 +47,7 @@
                             <div class ="card body">
                             <img src="/Profile/ProfilePicture.png" class="rounded-cricle" width ="200">
                             <div class="mt-3">
-                                <h2 id = "username1"> KennethValdez013</h2>
+                                <h2 id = "username1">{{username}}</h2>
                                 <br>
                                 <h5 id="numberOfWins"> Wins: 69</h5>
                                 <h5 id="numberOfGames"> Games: 100</h5>
@@ -65,7 +65,7 @@
                                     <h6 class="mb-0">Username</h6>
                                   </div>
                                   <div id="username2" class="col-sm-9 text-secondary">
-                                    KennethValdez013
+                                    {{username}}
                                   </div>
                                 </div>
                                 <hr>
@@ -124,13 +124,7 @@
                     </div>
 
                 </div>
-
-
-                
-
                 </div>
-
-
                 </div>
             </div>
         </div>
