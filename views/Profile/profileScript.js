@@ -1,10 +1,9 @@
-
+let matchHistoryIsShown = false;
 
 
 function addMatch(mode, date, rounds, score, rank){
 
     let timeline = document.getElementById("timeline");
-
     let div = document.createElement("div");
     div.setAttribute("class", "timeline-element");
     let h2 = document.createElement("h2");
@@ -83,6 +82,9 @@ function removeMatchHistoty(){
 function addMatchHistoty(){
     //unfinished
 
+    //max 15 matches??
+
+    
     // if there are no matches :display text
 
     addMatch("Normal","23.04.2023",7,480,1);
@@ -92,7 +94,26 @@ function addMatchHistoty(){
     addMatch("Normal","21.03.2023",6,580,1);
 }
 
+function updateMatchHistory(){
+    let matchHistoryContainer = document.getElementById("matchHistoryContainer");
+    let matchHistoryButton = document.getElementById("MatchHistoryButton");
 
+    if(!matchHistoryIsShown){
+        let hr = document.createElement("hr");
+        hr.setAttribute("id", "divider");
+
+
+        matchHistoryButton.parentNode.insertBefore(hr, matchHistoryButton.nextSibling);
+        addMatchHistoty();   
+        matchHistoryIsShown = true;
+    } else{
+        removeMatchHistoty();
+        let hr = document.getElementById("divider");
+        hr.parentNode.removeChild(hr);
+        matchHistoryIsShown = false;
+
+    }
+}
 
 
 //test
@@ -105,6 +126,4 @@ setAveragePoints(453/55);
 setHighscore(456);
 setWinrate(50);
 
-removeMatchHistoty();
-addMatchHistoty();
 

@@ -102,3 +102,7 @@ header{
 .timeline-element table{
     width: 90%;
 }
+
+#MatchHistoryButton{
+    cursor: none;
+}
