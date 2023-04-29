@@ -5,7 +5,7 @@
     --yellow: #FFB61E;
     --brown: #615055;
     --dark: #1A1423;
-  }
+} 
   
   
   *{
@@ -294,16 +294,16 @@
 
 
 
-  .form-style-8{
+  .form-style{
     font-family: 'Open Sans Condensed', arial, sans;
     width: 500px;
     padding: 30px;
     background: #FFFFFF;
     margin: 50px auto;
-}
+  }
 
-.form-style-8 input[type="text"],
-.form-style-8 input[type="email"]
+.form-style input[type="text"],
+.form-style input[type="email"]
 {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -320,7 +320,7 @@
     height: 45px;
 }
 
-.form-style-8 textarea{
+.form-style textarea{
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -338,8 +338,8 @@
     overflow-y: auto;
 }
 
-.form-style-8 input[type="button"], 
-.form-style-8 input[type="submit"]{
+.form-style input[type="button"], 
+.form-style input[type="submit"]{
     -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
     -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
     box-shadow: inset 0px 1px 0px 0px #45D6D6;
@@ -355,7 +355,7 @@
     text-transform: uppercase;
 }
 
-.form-style-8 input[type="submit"]:hover {
+.form-style input[type="submit"]:hover {
     background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
     background-color:#34CACA;
 }
