@@ -1,3 +1,12 @@
+/*let responseJson = new [];
+
+async function LoadData(){
+  let response = await fetch('/stats_table');
+  responseJson = await response.json();
+  console.log(responseJson);
+  setProfileData(responseJson);
+}*/
+
 const player_scores = [
     [1, 1, 'DeezNuts', '11940', '107'],
     [2, 3, 'DickS.Ding', '10780', '118'],
@@ -55,8 +64,13 @@ const player_scores = [
   
 /*------------------------------------------------------------------------------------------------------------------*/
   
-  var amt_show = amt_playershow.value;
   amt_playershow.addEventListener("change", () => {
+    buildTable();
+  });
+  
+/*------------------------------------------------------------------------------------------------------------------*/
+
+  function buildTable(){
     amt_show = amt_playershow.value;
   
     //Tabelle komlett leeren, ...
@@ -107,57 +121,12 @@ const player_scores = [
   
     //Tabelle in HTML einfügen
     tablecontainer.appendChild(table);
-  });
-  
+  };
+
 /*------------------------------------------------------------------------------------------------------------------*/
   
-  // HTML-Tabelle erstellen
-  const table = document.createElement('table');
-  const tableHead = document.createElement('thead');
-  const tableHeadRow = document.createElement('tr');
-  
-  //Header bzw. Überschriften der Zeilen festlegen
-  let tableHeaders = ["worldwide ranking", "playername", "points", "rounds played"];
-  
-  // Tabellenkopf erstellen
-  for (let i = 0; i < tableHeaders.length; i++) {
-  const headerCell = document.createElement('th');
-  headerCell.textContent = tableHeaders[i];
-  tableHeadRow.appendChild(headerCell);
-  }
-  tableHead.appendChild(tableHeadRow);
-  table.appendChild(tableHead);
-  
-  // Tabelleninhalt erstellen
-  var tableBody = document.createElement('tbody');
-  for (let i = 0; i < Math.min(player_scores.length, amt_show); i++) {
-  var tableRow = document.createElement('tr');
-  
-  var tableCell = document.createElement('td');
-  tableCell.textContent = player_scores[i][0];    //Platzierung
-  tableRow.appendChild(tableCell);
-  
-  tableCell = document.createElement('td');
-  tableCell.textContent = player_scores[i][2];    //Name
-  tableRow.appendChild(tableCell);
-  
-  tableCell = document.createElement('td');
-  tableCell.textContent = player_scores[i][3];    //Punktzahl
-  tableRow.appendChild(tableCell);
-  
-  tableCell = document.createElement('td');
-  tableCell.textContent = player_scores[i][4];    //Runden
-  tableRow.appendChild(tableCell);
-  
-  tableBody.appendChild(tableRow);
-  }
-  table.appendChild(tableBody);
-  
-  //Tabelle in HTML einfügen
-  tablecontainer.appendChild(table);
-  
-/*------------------------------------------------------------------------------------------------------------------*/
-  
+  buildTable();
+
   player_id_max = 0;
   for (let index = 0; index < player_scores.length; index++) {
     player_id_max = Math.max(player_scores[index][1], player_id_max);  
