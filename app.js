@@ -56,7 +56,7 @@ app.get("/Stats", (req,res) =>{
 });
 
 app.get("/Login", (req,res) =>{
-    res.render("LogReg");
+    res.render("Login");
 });
 
 app.get("", (req,res) => {
