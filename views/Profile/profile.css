@@ -1,3 +1,15 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Quicksand", sans-serif;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+
 #personalStats{
     height: 100vh;
     width: 100%;
@@ -7,7 +19,6 @@
     background-size: cover;
     background-position: bottom;
     background-color:#00576a;
-
     justify-content: center;
     align-items: center;
     z-index: 1;
@@ -44,6 +55,7 @@ body{
 
 .nav-bar{
     z-index: 10;
+    overflow: hidden;
 }
 header{
     z-index: 10;
@@ -106,3 +118,80 @@ header{
 #MatchHistoryButton{
     cursor: none;
 }
+
+
+.cursor{
+    pointer-events: none;
+    position: fixed;
+    padding: 0.3rem;
+    background-color: var(--yellow);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+  
+  .cursor2{
+    pointer-events: none;
+    position: fixed;
+    padding: 0.8rem;
+    border: 1px solid var(--yellow);
+    background-color: transparent;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s;
+    z-index: 10;
+  }
+  
+  .cursor.increase{
+    transform: translate(-50%, -50%) scale(7);
+    background-color: rgba(255, 182, 30, 0.5);
+  }
+  
+  .cursor2.increase{
+    border-color: transparent;
+  }
+
+  .header{
+    position: fixed; /*relative*/
+    width: 100%;
+    height: 80px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    z-index: 5;
+    transition: 0.2s;
+  }
+  
+  .header.scroll{
+    background-color: var(--white);
+  }
+  
+  .nav-bar ul{
+    display:flex;
+  }
+  
+  .nav-bar ul li a{
+    display: block;
+    color: var(--dark);
+    font-size: 20px;
+    padding: 10px 25px;
+  
+    transition: 0.2s;
+    margin: 0 5px;
+  }
+
+  .header{
+    position: fixed; /*relative*/
+    width: 100%;
+    height: 80px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+    z-index: 5;
+    transition: 0.2s;
+  }
