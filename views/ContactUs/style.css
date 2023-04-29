@@ -300,6 +300,7 @@
     padding: 30px;
     background: #FFFFFF;
     margin: 50px auto;
+    border-radius: 25px;
   }
 
 .form-style input[type="text"],

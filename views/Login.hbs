@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/Login/style.css">
+    <title>GuessMaster</title>
+
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor2"></div>
+    <div class="header">
+        <a onmouseover="cursorBig()" onmouseout="cursorSmall()" id="logo" href="/"><img src="/Main/src/MainImages/logo.png" alt="Logo"></a>
+        <div id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/AboutUs">About Us</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/Blog">Blog</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/ContactUs">Contact</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/Stats">Stats</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!---HIER KOMMT DIE WEBSITE HIN-->
+    <div id="section1">
+      <div class="form-style">
+        <form action="/Login" method="POST">
+          <h1>Please Login to see your Profile</h1>
+          <br><br>
+          <label for="username">Username:</label><br>
+          <input type="text" id="username" name="username"><br>
+
+          <label for="password">Password:</label><br>
+          <input type="password" id="password" name="password"><br>
+
+          <input type="submit" id="logintbtn" value="Login">
+
+          {{#if message}}
+           <h4>{{message}}</h4>
+          {{/if}}
+
+        </form>
+        </div>
+    </div>
+    <script src="/Login/login.js"></script>
+
+</body>
+</html>
