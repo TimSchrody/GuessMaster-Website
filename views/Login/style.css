@@ -119,6 +119,9 @@ body{
   align-items: center;
 }
 
+#logintbtn{
+  cursor: none;
+}
 
 
 /* Ab hier Tim G. */
