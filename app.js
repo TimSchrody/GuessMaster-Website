@@ -72,7 +72,8 @@ app.get("/Logout", (req, res) => {
 app.get("/Profile", (req,res) => {
     if (req.session.loggedIn) {
         const username = req.session.username;
-        res.render("Profile", { username });
+        res.render("Profile", { username});
+
     } else {
         res.redirect("/"); 
     }
