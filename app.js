@@ -119,6 +119,17 @@ app.post("/Login", (req, res) => {
     }
 });
 
+app.get('/stats_table', (req, res) => {
+    db.query(`SELECT ROW_NUMBER() OVER (ORDER BY SUM(s.score) DESC) AS platzierung, u.id AS user_id, u.name AS spielername, SUM(s.score) AS punktzahl, SUM(g.rounds) AS gespielte_runden FROM score s INNER JOIN user u ON s.user_id = u.id INNER JOIN game g ON s.game_id = g.idgame GROUP BY s.user_id, u.name ORDER BY punktzahl DESC LIMIT 40`, async (error, results) => {
+        if(error) {
+            console.log("Fehler bei Stats-Abfrage: ", error);
+        }
+        else {
+            res.json(results);
+        }
+    })
+})
+
 //Port 3005
 app.listen(3005,() =>{
     console.log("Server started on Port 3005");
