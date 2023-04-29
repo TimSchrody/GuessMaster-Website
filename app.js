@@ -95,7 +95,7 @@ app.post("/Login", (req, res) => {
             if(results.length == 0){
 
                 return res.render('Login', {
-                    message: 'User does not exist'
+                    message: 'This User does not exist!'
                 });
                 
             } else if(await bcrypt.compare(req.body.password, results[0].password)){ //Check if password is correct
@@ -106,14 +106,14 @@ app.post("/Login", (req, res) => {
     
             } else {
                 return res.render('Login', {
-                    message: 'Password does not match'
+                    message: 'Wrong Password or Username!'
                 });
             }
     
         });
     } else{
         return res.render('Login', {
-            message: 'Please fill in missing values'
+            message: 'Please fill in the missing values'
         });
     }
 });
