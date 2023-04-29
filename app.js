@@ -94,7 +94,7 @@ app.post("/Login", (req, res) => {
             //Check if User exists
             if(results.length == 0){
 
-                return res.render('LogReg', {
+                return res.render('Login', {
                     message: 'User does not exist'
                 });
                 
@@ -105,14 +105,14 @@ app.post("/Login", (req, res) => {
                 res.redirect("/Profile");
     
             } else {
-                return res.render('LogReg', {
+                return res.render('Login', {
                     message: 'Password does not match'
                 });
             }
     
         });
     } else{
-        return res.render('LogReg', {
+        return res.render('Login', {
             message: 'Please fill in missing values'
         });
     }
