@@ -1,11 +1,41 @@
 let matchHistoryIsShown = false;
+let responseJson = [];
 
 //Function thats executed when loading the page
 async function LoadData(){
-    let username = document.getElementById("username1").innerHTML;
-    let response = await fetch('/profileData')
-    let responseJson = await response.json()
+    let response = await fetch('/profileData');
+    responseJson = await response.json();
     console.log(responseJson);
+    setProfileData(responseJson);
+}
+
+function setProfileData(profileData){
+
+    let numberOfWins = 0;
+    let numberOfGames = 0;
+    let numberOfPoints = 0;
+    let numberOfRounds = 0;
+    let highscore = 0;
+
+    profileData.forEach(matchData =>{
+        numberOfGames++;
+        numberOfPoints += matchData.score;
+        numberOfRounds += matchData.rounds;
+
+        if (matchData.ranking === 1){
+            numberOfWins++;
+        }
+        if(highscore < matchData.score){
+            highscore = matchData.score;
+        }
+    });
+    setWinCount(numberOfWins);
+    setGameCount(numberOfGames);
+    setPointCount(numberOfPoints);
+    setRoundsPlayed(numberOfRounds);
+    setHighscore(highscore);
+    setWinrate(((numberOfWins/numberOfGames)*100).toFixed(1));
+    setAveragePoints(numberOfPoints/numberOfRounds);
 }
 
 function addMatch(mode, date, rounds, score, rank){
@@ -87,19 +117,21 @@ function removeMatchHistoty(){
 }
 
 function addMatchHistoty(){
-    //unfinished
-
     //max 15 matches??
-
-    
     // if there are no matches :display text
-
-    addMatch("Normal","23.04.2023",7,480,1);
-    addMatch("Normal","22.04.2023",4,280,3);
-    addMatch("Normal","21.04.2023",5,480,1);
-    addMatch("Normal","21.04.2023",5,380,2);
-    addMatch("Normal","21.03.2023",6,580,1);
+    if(responseJson.length !== 0){
+        responseJson.forEach(matchData =>{
+            let date = convertDate(matchData.date);
+            addMatch(matchData.mode,date,matchData.rounds,matchData.score,matchData.ranking);
+        });
+    }
 }
+
+function convertDate(date){
+    date = date.substring(8,10) + "." + date.substring(5,7) + "." + date.substring(0,4);
+    return date;
+}
+
 
 function updateMatchHistory(){
     let matchHistoryContainer = document.getElementById("matchHistoryContainer");
@@ -124,6 +156,12 @@ function updateMatchHistory(){
 
 
 ////////////////////////////////////////////////////////////////////////
+hamburger = document.querySelector("#hamburger");
+
+hamburger.onclick = function(){
+    navBar = document.querySelector(".nav-bar");
+    navBar.classList.toggle("active");
+}
 
 function cursorBig(){
     document.querySelector(".cursor").classList.toggle("increase");
