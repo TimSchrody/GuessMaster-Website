@@ -1,4 +1,5 @@
 hamburger = document.querySelector("#hamburger");
+
 hamburger.onclick = function(){
     navBar = document.querySelector(".nav-bar");
     navBar.classList.toggle("active");
@@ -25,6 +26,7 @@ document.addEventListener("mousemove", (e) => {
     cursor2.style.left = e.clientX + "px";
     cursor2.style.top = e.clientY+ "px";
 });
+
 
 const header = document.querySelector(".header");
 window.addEventListener("scroll", function(){
