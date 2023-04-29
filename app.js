@@ -119,6 +119,18 @@ app.post("/Login", (req, res) => {
     }
 });
 
+app.get('/profileData',(req, res) => {
+    db.query(`SELECT user.name, game.rounds, game.mode, game.date, score.score, score.ranking FROM user 
+              JOIN score ON score.user_id = user.id JOIN game ON game.idgame = score.game_id WHERE name = '${req.session.username}' ORDER BY game.date DESC;`, (error, results, fields) => {
+      if (error) {
+        console.error('Fehler bei der Abfrage: ', error);
+      } 
+        else {
+          res.json(results);
+      }
+    });
+});
+
 //Port 3005
 app.listen(3005,() =>{
     console.log("Server started on Port 3005");
