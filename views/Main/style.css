@@ -355,40 +355,70 @@ body{
       background: var(--dark);
       margin: 6px 0;
   }
+}
 
-  .nav-bar{
-      margin: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100vw;
-      height: 0;
-      background: var(--white);
-      transition: 0.2s;
-      overflow: hidden;
-      border-bottom: none 2px var(--dark);
-  }
+.form-style{
+  font-family: 'Open Sans Condensed', arial, sans;
+  width: 500px;
+  padding: 30px;
+  background: #FFFFFF;
+  margin: 50px auto;
+}
 
-  .nav-bar.active {
-      height: 450px;
-      border-bottom: solid 2px var(--dark);
-  }
+.form-style input[type="text"],
+.form-style input[type="email"]
+{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  display: block;
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: transparent;
+  margin-bottom: 10px;
+  font: 16px Arial, Helvetica, sans-serif;
+  height: 45px;
+}
 
-  .nav-bar ul{
-      display: block;
-      width: fit-content;
-      margin: 80px auto 0 auto;
-      text-align: center;
-      transition: 0.5s;
-      opacity: 0;
-  }
+.form-style textarea{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  display: block;
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: transparent;
+  margin-bottom: 10px;
+  font: 16px Arial, Helvetica, sans-serif;
+  height: 100px;
+  resize:none;
+  overflow-y: auto;
+}
 
-  .nav-bar.active ul{
-      opacity: 1;
-  }
+.form-style input[type="button"], 
+.form-style input[type="submit"]{
+  -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+  box-shadow: inset 0px 1px 0px 0px #45D6D6;
+  background-color: #2CBBBB;
+  border: 1px solid #27A0A0;
+  display: inline-block;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 14px;
+  padding: 8px 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
 
-  .nav-bar ul li a {
-      margin-bottom: 12px;
-  }
+.form-style input[type="submit"]:hover {
+  background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+  background-color:#34CACA;
 }
