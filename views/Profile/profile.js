@@ -164,12 +164,12 @@ hamburger.onclick = function(){
 }
 
 function cursorBig(){
-    document.querySelector(".cursor").classList.toggle("increase");
-    document.querySelector(".cursor2").classList.toggle("increase");
+    document.querySelector(".cursor").classList.add("increase");
+    document.querySelector(".cursor2").classList.add("increase");
 }
 function cursorSmall(){
-    document.querySelector(".cursor").classList.toggle("increase");
-    document.querySelector(".cursor2").classList.toggle("increase");
+    document.querySelector(".cursor").classList.remove("increase");
+    document.querySelector(".cursor2").classList.remove("increase");
 }
 
 const cursor = document.querySelector(".cursor");
