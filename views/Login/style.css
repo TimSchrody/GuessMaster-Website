@@ -259,6 +259,14 @@ h4 {
   .cursor{
       display: none;
   }
+  
+  .cursor2{
+    display: none;
+  }
+
+  #logintbtn{
+    cursor: pointer;
+  }
 
   #hamburger{
       display: block;

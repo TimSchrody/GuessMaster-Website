@@ -364,6 +364,10 @@ body{
       display: none;
   }
 
+  .cursor2{
+    display: none;
+  }
+  
   #hamburger{
       display: block;
       cursor: pointer;

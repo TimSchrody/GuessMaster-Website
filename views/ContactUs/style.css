@@ -304,6 +304,14 @@
     .cursor{
         display: none;
     }
+    
+    .cursor2{
+      display: none;
+    }
+
+    #btnSend{
+      cursor: pointer;
+    }
   
     #hamburger{
         display: block;
