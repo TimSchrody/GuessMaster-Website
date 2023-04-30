@@ -128,13 +128,20 @@
     background-color:#00576a;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    position:relative;
+}
+
+#wrapper{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .main{
     padding: 15px;
     top: 100px;
     position:relative;
+    min-height: 95vh;
 }
 
 body{
@@ -158,14 +165,6 @@ body{
 
 .rounded-cricle{
     align-self: center;
-}
-
-.nav-bar{
-    z-index: 10;
-    overflow: hidden;
-}
-header{
-    z-index: 10;
 }
 
 #timeline{
@@ -226,7 +225,11 @@ header{
     cursor: none;
 }
 
+
+
 #footer {
+    margin-top: 100px;
+    bottom:0;
     padding: 0.5em;
     font-size: 15px;
     background-color: var(--dark);
