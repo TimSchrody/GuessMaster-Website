@@ -63,7 +63,7 @@ app.get("/Logout", (req, res) => {
     req.session.loggedIn = false;
     req.session.username = null;
     res.redirect("/"); 
-  });
+});
 
 app.get("/Profile", (req,res) => {
     if (req.session.loggedIn) {
