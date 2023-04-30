@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" type="text/css" href="Main/style.css">
+    <script>
+      function cursorBig(){
+        document.querySelector(".cursor").classList.add("increase");
+        document.querySelector(".cursor2").classList.add("increase");
+      }
+      function cursorSmall(){
+        document.querySelector(".cursor").classList.remove("increase");
+        document.querySelector(".cursor2").classList.remove("increase");
+      }
+    </script>
     <title>GuessMaster</title>
-
-
-    <!-- FontAwesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-    />
 </head>
 <body>
     <div class="cursor"></div>
@@ -107,27 +111,27 @@
         <div id="section5_content">
             <div class="sec5_box">
               <img src="/Main/src/MainImages/01.png">
-              <span class="sec5_data">Marius Meißner</span>
+              <span class="sec5_data">Marius M.</span>
               <span class="sec5_datatext">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span>
             </div>
             <div class="sec5_box">
                 <img src="/Main/src/MainImages/02.png">
-              <span class="sec5_data">Daniel Klittich</span>
+              <span class="sec5_data">Daniel K.</span>
               <span class="sec5_datatext">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span>
             </div>
             <div class="sec5_box">
                 <img src="/Main/src/MainImages/03.png">
-              <span class="sec5_data">Tim Schrody</span>
+              <span class="sec5_data">Tim S.</span>
               <span class="sec5_datatext">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span>
             </div>
             <div class="sec5_box">
                 <img src="/Main/src/MainImages/04.png">
-              <span class="sec5_data">Daniel Schirmer</span>
+              <span class="sec5_data">Daniel S.</span>
               <span class="sec5_datatext">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span>
             </div>
             <div class="sec5_box">
                 <img src="/Main/src/MainImages/01.png">
-              <span class="sec5_data">Tim Gering</span>
+              <span class="sec5_data">Tim G.</span>
               <span class="sec5_datatext">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</span>
             </div>
         </div>
@@ -148,8 +152,6 @@
         <br />
         DHBW Karlsruhe</p>
     </div>
-
     <script src="Main/main.js"></script>
-
 </body>
 </html>

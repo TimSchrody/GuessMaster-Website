@@ -163,15 +163,6 @@ hamburger.onclick = function(){
     navBar.classList.toggle("active");
 }
 
-function cursorBig(){
-    document.querySelector(".cursor").classList.add("increase");
-    document.querySelector(".cursor2").classList.add("increase");
-}
-function cursorSmall(){
-    document.querySelector(".cursor").classList.remove("increase");
-    document.querySelector(".cursor2").classList.remove("increase");
-}
-
 const cursor = document.querySelector(".cursor");
 document.addEventListener("mousemove", (e) => {
     cursor.style.left = e.clientX + "px";
