@@ -464,7 +464,7 @@ body{
 #footer {
   padding: 0.5em;
   font-size: 15px;
-  background-color: rgb(66, 70, 73);
+  background-color: var(--dark);
 }
 
 #footer ul {
@@ -478,7 +478,7 @@ body{
   display: block;
   text-align: left;
   padding: 14px 16px;
-  color: rgb(121, 129, 136);
+  color: rgb(124, 124, 124);
 }
 
 #footer li a {
@@ -491,9 +491,6 @@ body{
   float: left;
 }
 
-#footer li a:hover {
-  background-color: black;
-}
 
 
 
