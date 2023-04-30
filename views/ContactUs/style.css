@@ -286,7 +286,9 @@
     }
   }
 
-
+#btnSend{
+  cursor: none;
+}
 
 
   .form-style{

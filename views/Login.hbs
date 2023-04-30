@@ -50,7 +50,7 @@
           <label for="password">Password:</label><br>
           <input type="password" id="password" name="password"><br>
 
-          <input type="submit" id="logintbtn" value="Login">
+          <input onmouseover="cursorBig()" onmouseout="cursorSmall()" type="submit" id="logintbtn" value="Login">
 
           {{#if message}}
            <h4>{{message}}</h4>
