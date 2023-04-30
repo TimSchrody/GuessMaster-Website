@@ -125,11 +125,7 @@ function removeMatchHistoty(){
 }
 
 function addMatchHistoty(){
-    //max 15 matches??
-    // if there are no matches :display text
     let numberOfGames = 0;
-
-
     if(responseJson.length !== 0){
         responseJson.forEach(matchData =>{
             numberOfGames++;
@@ -151,7 +147,6 @@ function convertDate(date){
     date = date.substring(8,10) + "." + date.substring(5,7) + "." + date.substring(0,4);
     return date;
 }
-
 
 function updateMatchHistory(){
     let matchHistoryButton = document.getElementById("MatchHistoryButton");
