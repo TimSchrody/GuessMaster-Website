@@ -268,6 +268,40 @@ body{
     font-size: 25px;
     font-weight: bold;
   }
+
+  #footer {
+  padding: 0.5em;
+  font-size: 15px;
+  background-color: rgb(66, 70, 73);
+}
+
+#footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#footer p {
+  display: block;
+  text-align: left;
+  padding: 14px 16px;
+  color: rgb(121, 129, 136);
+}
+
+#footer li a {
+  display: block;
+  text-align: left;
+  padding: 14px 16px;
+  margin-right: 20px;
+  color: white;
+  text-decoration: none;
+  float: left;
+}
+
+#footer li a:hover {
+  background-color: black;
+}
   
 /*------------------------------------------------------------------------------------------------------------------*/
 
