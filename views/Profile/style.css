@@ -57,7 +57,7 @@
     margin: 0 5px;
   }
   
-  .nav-bar a::before{
+.nav-bar a::before{
     content: "";
     width: 70%;
     height: 4px;
@@ -68,22 +68,22 @@
     transition: 0.5s transform ease;
     transform: scale3d(0,1,1);
     transform-origin: 100% 50%;
-  }
-  .nav-bar a:hover::before{
+}
+.nav-bar a:hover::before{
     transform: scale3d(1,1,1);
     transform-origin: 0 50%;
-  }
+}
   
-  #menu_active_site{
+#menu_active_site{
     font-weight: bold;
-  }
+}
   
-  #menu_play_now a{
+#menu_play_now a{
     border-radius: 50px;
     background: transparent;
     border: solid 2px var(--dark);
     color: var(--dark);
-  }
+}
   
   .cursor{
     pointer-events: none;
@@ -96,7 +96,7 @@
     z-index: 10;
   }
   
-  .cursor2{
+.cursor2{
     pointer-events: none;
     position: fixed;
     padding: 0.8rem;
@@ -106,16 +106,16 @@
     transform: translate(-50%, -50%);
     transition: transform 0.5s;
     z-index: 10;
-  }
+}
   
-  .cursor.increase{
+.cursor.increase{
     transform: translate(-50%, -50%) scale(7);
     background-color: rgba(255, 182, 30, 0.5);
-  }
+}
   
-  .cursor2.increase{
+.cursor2.increase{
     border-color: transparent;
-  }
+}
 
 #personalStats{
     height: 100vh;
