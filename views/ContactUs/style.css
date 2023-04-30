@@ -155,14 +155,6 @@
     margin: 20px 0 40px 0;
     font-size: 22px;
   }
-  
-  #section1 {
-    padding: 0.5em;
-    font-size: 15px;
-    position: relative;
-    margin: 0 auto;
-    background-color: rgb(93, 86, 42);
-  }
 
   #section1{
     padding: 100px 5vw 80px 5vw;
@@ -229,7 +221,6 @@
     overflow-y: auto;
 }
 
-.form-style input[type="button"], 
 .form-style input[type="submit"]{
     -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
     -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
