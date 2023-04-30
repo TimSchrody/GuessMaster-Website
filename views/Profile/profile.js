@@ -1,10 +1,16 @@
 let matchHistoryIsShown = false;
 let responseJson = [];
+let reponseUserName = [];
 
 //Function thats executed when loading the page
 async function LoadData(){
     let response = await fetch('/profileData');
     responseJson = await response.json();
+
+    //Needs to be added separate for User with no Database entry
+    let UserName = await fetch('/profileName');
+    reponseUserName = await UserName.json();
+
     setProfileData(responseJson);
 }
 
@@ -36,6 +42,7 @@ function setProfileData(profileData){
         averagePoints = numberOfPoints/numberOfRounds;
     }
 
+    setUsername();
     setWinCount(numberOfWins);
     setGameCount(numberOfGames);
     setPointCount(numberOfPoints);
@@ -75,11 +82,11 @@ function addMatch(mode, date, rounds, score, rank){
     timeline.appendChild(div);
 }
 
-function setUsername(name){
+function setUsername(){
     let username1 = document.getElementById("username1");
     let username2 = document.getElementById("username2");
-    username1.innerText = name;
-    username2.innerText = name;
+    username1.innerText = reponseUserName;
+    username2.innerText = reponseUserName;
 }
 
 function setWinCount(numberOfWins){
