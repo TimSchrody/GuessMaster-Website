@@ -215,7 +215,6 @@ body{
   }
 
   #section3_table {
-    border: 3px solid #cdcdcd;
     border-collapse: collapse;
     width: 100%;
     display: flex;
