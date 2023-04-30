@@ -15,6 +15,8 @@ function setProfileData(profileData){
     let numberOfPoints = 0;
     let numberOfRounds = 0;
     let highscore = 0;
+    let winrate = 0;
+    let averagePoints = 0;
 
     profileData.forEach(matchData =>{
         numberOfGames++;
@@ -28,13 +30,19 @@ function setProfileData(profileData){
             highscore = matchData.score;
         }
     });
+    
+    if(numberOfGames !== 0){
+        winrate = ((numberOfWins/numberOfGames)*100).toFixed(1);
+        averagePoints = numberOfPoints/numberOfRounds;
+    }
+
     setWinCount(numberOfWins);
     setGameCount(numberOfGames);
     setPointCount(numberOfPoints);
     setRoundsPlayed(numberOfRounds);
     setHighscore(highscore);
-    setWinrate(((numberOfWins/numberOfGames)*100).toFixed(1));
-    setAveragePoints(numberOfPoints/numberOfRounds);
+    setWinrate(winrate);
+    setAveragePoints(averagePoints);
 }
 
 function addMatch(mode, date, rounds, score, rank){
@@ -137,6 +145,7 @@ function updateMatchHistory(){
     let matchHistoryButton = document.getElementById("MatchHistoryButton");
 
     if(!matchHistoryIsShown){
+        matchHistoryButton.innerText = "Hide Match History";
         let hr = document.createElement("hr");
         hr.setAttribute("id", "divider");
 
@@ -145,6 +154,7 @@ function updateMatchHistory(){
         addMatchHistoty();   
         matchHistoryIsShown = true;
     } else{
+        matchHistoryButton.innerText = "Show Match History";
         removeMatchHistoty();
         let hr = document.getElementById("divider");
         hr.parentNode.removeChild(hr);
