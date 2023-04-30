@@ -298,6 +298,14 @@ body{
     .cursor{
         display: none;
     }
+
+    .cursor2{
+        display: none;
+    }
+
+    #MatchHistoryButton{
+        cursor: pointer;
+    }
   
     #hamburger{
         display: block;
