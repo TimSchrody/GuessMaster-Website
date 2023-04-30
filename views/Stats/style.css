@@ -1,10 +1,10 @@
 :root {
-    --blue: #00576a;
-    --white: #F6F7EB;
-    --red: #e94f37;
-    --yellow: #FFB61E;
-    --brown: #5f493e;
-    --dark: #1A1423;
+  --blue: #00576a;
+  --white: #F6F7EB;
+  --red: #e94f37;
+  --yellow: #FFB61E;
+  --brown: #5f493e;
+  --dark: #1A1423;
 }
 
 
@@ -111,7 +111,7 @@ body{
 #section1{
     height: 100vh;
     width: 100%;
-    background-image: url('src/MainImages/landscape_yellow.jpg');
+    background-image: url('../Main/src/MainImages/landscape_yellow.jpg');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
@@ -211,8 +211,24 @@ body{
 }
 
   #section3 selectamount{
-    padding-right: 70px;
-    float: right;
+    padding: auto; 
+    color: var(--dark);
+  }
+
+  #section3 select {
+    border: 1px solid --dark;
+    border-radius: 4px;
+    padding: 4px 6px;
+    background-color: var(--white);
+  }
+  #section3 select:focus {
+    box-shadow: 0 0 8px -2px;
+  }
+  #section3 option {
+    background-color: var(--white);
+  }
+  #section3 option::selection {
+    background-color: red;;
   }
 
   #section3_table {
@@ -261,7 +277,7 @@ body{
     text-align: center;
   }
   
-  #section3 a2{
+  #section3 a {
     padding: 15px 30px;
     background-color: var(--red);
     border-radius: 50px;
@@ -269,4 +285,113 @@ body{
     font-size: 25px;
     font-weight: bold;
   }
+
+  #footer {
+    padding: 0.5em;
+    font-size: 15px;
+    background-color: var(--dark);
+  }
   
+  #footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  #footer p {
+    display: block;
+    text-align: left;
+    padding: 14px 16px;
+    color: rgb(124, 124, 124);
+  }
+  
+  #footer li a {
+    display: block;
+    text-align: left;
+    padding: 14px 16px;
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    float: left;
+  }
+  
+/*------------------------------------------------------------------------------------------------------------------*/
+
+  @media only screen and (max-width: 1320px){
+  .header{
+      padding: 0 50px;
+  }
+}
+
+@media only screen and (max-width: 1100px){
+  .header{
+      padding: 0 30px;
+  }
+}
+
+@media only screen and (max-width: 900px){
+
+  body{
+    cursor: default;
+  }
+
+  *{
+    cursor: default;
+  }
+
+  a{
+    cursor: pointer;
+  }
+  .cursor{
+      display: none;
+  }
+
+  #hamburger{
+      display: block;
+      cursor: pointer;
+      z-index: 20;
+  }
+  #hamburger .line{
+      width: 30px;
+      height: 3px;
+      background: var(--dark);
+      margin: 6px 0;
+  }
+
+  .nav-bar{
+      margin: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      height: 0;
+      background: var(--white);
+      transition: 0.2s;
+      overflow: hidden;
+      border-bottom: none 2px var(--dark);
+  }
+
+  .nav-bar.active {
+      height: 450px;
+      border-bottom: solid 2px var(--dark);
+  }
+
+  .nav-bar ul{
+      display: block;
+      width: fit-content;
+      margin: 80px auto 0 auto;
+      text-align: center;
+      transition: 0.5s;
+      opacity: 0;
+  }
+
+  .nav-bar.active ul{
+      opacity: 1;
+  }
+
+  .nav-bar ul li a {
+      margin-bottom: 12px;
+  }
+}

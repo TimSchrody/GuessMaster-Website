@@ -7,14 +7,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="/Main/style.css">
     <link rel="stylesheet" href="/Profile/profile.css">
+    <link rel="shortcut icon" type="image/png" href="/Main/src/MainImages/logo.png">
     <title>GuessMaster</title>
 
-
-    <!-- FontAwesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-    />
+    <script>
+      function cursorBig(){
+        document.querySelector(".cursor").classList.add("increase");
+        document.querySelector(".cursor2").classList.add("increase");
+      }
+      function cursorSmall(){
+        document.querySelector(".cursor").classList.remove("increase");
+        document.querySelector(".cursor2").classList.remove("increase");
+      }
+    </script>
 </head>
 <body onload="LoadData()">
     <div class="cursor"></div>
@@ -28,9 +33,9 @@
         </div>
         <nav class="nav-bar">
             <ul>
-                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/AboutUs">About Us</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/">Home</a></li>
                 <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/Blog">Blog</a></li>
-                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/ContactUS">Contact</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/ContactUS">Contact Us</a></li>
                 <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/Stats">Stats</a></li>
                 <li onmouseover="cursorBig()" onmouseout="cursorSmall()" id="menu_play_now"><a href="/Logout">Logout</a></li>
                 
@@ -113,7 +118,7 @@
                                 
                                 <div class="row">
                                   <div class="col-sm-12">
-                                    <a id="MatchHistoryButton" class="btn btn-info" onclick="ShowMatchHistory()" onmouseover="cursorBig()" onmouseout="cursorSmall()">Show Match History</a>
+                                    <a id="MatchHistoryButton" class="btn btn-info" onclick="updateMatchHistory()" onmouseover="cursorBig()" onmouseout="cursorSmall()">Show Match History</a>
                                   </div>
                                 </div>
                                 <section id="timeline">
@@ -128,6 +133,20 @@
                 </div>
             </div>
         </div>
+
+      <div id="footer">
+      <div id="footerlink">
+        <ul>
+          <li><a onmouseover="cursorBig()" onmouseout="cursorSmall()" href="/ContactUs">Mail us</a></li>
+          <li><a onmouseover="cursorBig()" onmouseout="cursorSmall()" href="https://github.com/Tiaaam/GuessMaster">Our GitHub</a></li>
+        </ul>
+      </div>
+      <p>Germany
+        <br /><br />
+        Copyright © 2023 GuessMaster Team. All rights reserved.
+        <br />
+        DHBW Karlsruhe</p>
+    </div>
       <script src="/Profile/profile.js"></script>
     </body>
 </html>

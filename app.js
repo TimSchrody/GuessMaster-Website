@@ -39,10 +39,6 @@ app.use(session({
 app.use(express.urlencoded({ extended: true }));
 
 
-app.get("/Aboutus", (req,res) => {
-    res.render("AboutUs");
-});
-
 app.get("/Blog", (req,res) => {
     res.render("Blog");
 });
@@ -118,6 +114,73 @@ app.post("/Login", (req, res) => {
         });
     }
 });
+
+app.get('/profileData',(req, res) => {
+    db.query(`SELECT user.name, game.rounds, game.mode, game.date, score.score, score.ranking FROM user 
+              JOIN score ON score.user_id = user.id JOIN game ON game.idgame = score.game_id WHERE name = '${req.session.username}' ORDER BY game.date DESC;`, (error, results, fields) => {
+      if (error) {
+        console.error('Fehler bei der Abfrage: ', error);
+      } 
+        else {
+          res.json(results);
+      }
+    });
+});
+
+app.get("/statsTable", (req, res) => {
+    db.query(`SELECT ROW_NUMBER() OVER (ORDER BY SUM(s.score) DESC) AS platzierung, u.id AS user_id, u.name AS spielername, SUM(s.score) AS punktzahl, SUM(g.rounds) AS gespielte_runden FROM score s INNER JOIN user u ON s.user_id = u.id INNER JOIN game g ON s.game_id = g.idgame GROUP BY s.user_id, u.name ORDER BY punktzahl DESC LIMIT 40`, async (error, results) => {
+        if(error) {
+            console.log("Fehler bei Stats-Abfrage: ", error);
+        }
+        else {
+            res.json(results);
+        }
+    })
+})
+
+app.get("/playersTotal", (req, res) => {
+    db.query(`SELECT COUNT(*) AS players_total FROM user;`, async (error, results) => {
+        if(error) {
+            console.log("Fehler bei playersTotal-Abfrage: ", error);
+        }
+        else {
+            res.json(results);
+        }
+    })
+})
+
+app.get("/roundSum", (req, res) => {
+    db.query(`SELECT SUM(rounds) AS round_sum FROM game;`, async (error, results) => {
+        if(error) {
+            console.log("Fehler bei roundSum-Abfrage: ", error);
+        }
+        else {
+            res.json(results);
+        }
+    })
+})
+
+app.get("/scoreSum", (req, res) => {
+    db.query(`SELECT SUM(score) AS score_sum FROM score;`, async (error, results) => {
+        if(error) {
+            console.log("Fehler bei scoreSum-Abfrage: ", error);
+        }
+        else {
+            res.json(results);
+        }
+    })
+})
+
+app.get("/avgRPG", (req, res) => {
+    db.query(`SELECT (SUM(rounds)/COUNT(idgame)) AS average_rounds_per_game FROM game;`, async (error, results) => {
+        if(error) {
+            console.log("Fehler bei scoreSum-Abfrage: ", error);
+        }
+        else {
+            res.json(results);
+        }
+    })
+})
 
 //Port 3005
 app.listen(3005,() =>{

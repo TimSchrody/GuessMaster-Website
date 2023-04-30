@@ -4,14 +4,6 @@ hamburger.onclick = function(){
     navBar.classList.toggle("active");
 }
 
-function cursorBig(){
-    document.querySelector(".cursor").classList.toggle("increase");
-    document.querySelector(".cursor2").classList.toggle("increase");
-}
-function cursorSmall(){
-    document.querySelector(".cursor").classList.toggle("increase");
-    document.querySelector(".cursor2").classList.toggle("increase");
-}
 
 
 const cursor = document.querySelector(".cursor");

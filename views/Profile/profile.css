@@ -178,7 +178,7 @@ header{
     color: var(--dark);
     font-size: 20px;
     padding: 10px 25px;
-  
+    text-decoration: none;
     transition: 0.2s;
     margin: 0 5px;
   }
@@ -194,4 +194,34 @@ header{
     padding: 0 100px;
     z-index: 5;
     transition: 0.2s;
+  }
+
+  #footer {
+    padding: 0.5em;
+    font-size: 15px;
+    background-color: var(--dark);
+  }
+  
+  #footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  #footer p {
+    display: block;
+    text-align: left;
+    padding: 14px 16px;
+    color: rgb(124, 124, 124);
+  }
+  
+  #footer li a {
+    display: block;
+    text-align: left;
+    padding: 14px 16px;
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+    float: left;
   }

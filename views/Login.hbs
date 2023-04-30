@@ -5,13 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/Login/style.css">
+    <link rel="shortcut icon" type="image/png" href="/Main/src/MainImages/logo.png">
     <title>GuessMaster</title>
 
-    <!-- FontAwesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-    />
+    <script>
+      function cursorBig(){
+        document.querySelector(".cursor").classList.add("increase");
+        document.querySelector(".cursor2").classList.add("increase");
+      }
+      function cursorSmall(){
+        document.querySelector(".cursor").classList.remove("increase");
+        document.querySelector(".cursor2").classList.remove("increase");
+      }
+    </script>
 </head>
 <body>
     <div class="cursor"></div>
@@ -25,9 +31,9 @@
         </div>
         <nav class="nav-bar">
             <ul>
-                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/AboutUs">About Us</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/">Home</a></li>
                 <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/Blog">Blog</a></li>
-                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/ContactUs">Contact</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/ContactUs">Contact Us</a></li>
                 <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/Stats">Stats</a></li>
             </ul>
         </nav>
@@ -36,7 +42,7 @@
     <div id="section1">
       <div class="form-style">
         <form action="/Login" method="POST">
-          <h1>Please Login to see your Profile</h1>
+          <h1>Login to see your Profile</h1>
           <br><br>
           <label for="username">Username:</label><br>
           <input type="text" id="username" name="username"><br>
@@ -44,7 +50,7 @@
           <label for="password">Password:</label><br>
           <input type="password" id="password" name="password"><br>
 
-          <input type="submit" id="logintbtn" value="Login">
+          <input onmouseover="cursorBig()" onmouseout="cursorSmall()" type="submit" id="logintbtn" value="Login">
 
           {{#if message}}
            <h4>{{message}}</h4>
@@ -53,6 +59,21 @@
         </form>
         </div>
     </div>
+
+    <div id="footer">
+      <div id="footerlink">
+        <ul>
+          <li><a onmouseover="cursorBig()" onmouseout="cursorSmall()" href="/ContactUs">Mail us</a></li>
+          <li><a onmouseover="cursorBig()" onmouseout="cursorSmall()" href="https://github.com/Tiaaam/GuessMaster">Our GitHub</a></li>
+        </ul>
+      </div>
+      <p>Germany
+        <br /><br />
+        Copyright © 2023 GuessMaster Team. All rights reserved.
+        <br />
+        DHBW Karlsruhe</p>
+    </div>
+    
     <script src="/Login/login.js"></script>
 
 </body>

@@ -4,7 +4,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="/ContactUs/style.css" />
+    <link rel="shortcut icon" type="image/png" href="/Main/src/MainImages/logo.png">
     <title>GuessMaster</title>
+
+    <script>
+      function cursorBig(){
+        document.querySelector(".cursor").classList.add("increase");
+        document.querySelector(".cursor2").classList.add("increase");
+      }
+      function cursorSmall(){
+        document.querySelector(".cursor").classList.remove("increase");
+        document.querySelector(".cursor2").classList.remove("increase");
+      }
+    </script>
   </head>
   <body>
 
@@ -19,11 +31,11 @@
         </div>
         <nav class="nav-bar">
             <ul>
-                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/AboutUs">About Us</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/">Home</a></li>
                 <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/Blog">Blog</a></li>
-                <li onmouseover="cursorBig()" onmouseout="cursorSmall()" id="menu_active_site"><a href="/ContactUS">Contact</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()" id="menu_active_site"><a href="/ContactUS">Contact Us</a></li>
                 <li onmouseover="cursorBig()" onmouseout="cursorSmall()"><a href="/Stats">Stats</a></li>
-                <li onmouseover="cursorBig()" onmouseout="cursorSmall()" id="menu_play_now"><a href="/Profile">Profile</a></li>
+                <li onmouseover="cursorBig()" onmouseout="cursorSmall()" id="menu_play_now"><a href="/Login">Profile</a></li>
                 
             </ul>
         </nav>
@@ -48,7 +60,7 @@
             <input type="text" name="subject" required placeholder="Subject"><br>
             <textarea name="message" required placeholder="Message"></textarea><br>
             <input type="hidden" name="_captcha" value="false">
-            <input type="submit" name="send" value="Send E-Mail" />
+            <input onmouseover="cursorBig()" onmouseout="cursorSmall()" id="btnSend" type="submit" name="send" value="Send E-Mail" />
         </form>
         </div>
     </div>
@@ -56,9 +68,8 @@
     <div id="footer">
       <div id="footerlink">
         <ul>
-          <li><a href="/AboutUs">About us</a></li>
-          <li><a href="/ContactUs">Contact us</a></li>
-          <li><a href="https://github.com/Tiaaam/GuessMaster">Our GitHub</a></li>
+          <li><a onmouseover="cursorBig()" onmouseout="cursorSmall()" href="/ContactUs">Mail us</a></li>
+          <li><a onmouseover="cursorBig()" onmouseout="cursorSmall()" href="https://github.com/Tiaaam/GuessMaster">Our GitHub</a></li>
         </ul>
       </div>
       <p>Germany
