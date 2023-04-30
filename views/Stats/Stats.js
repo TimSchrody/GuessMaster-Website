@@ -1,79 +1,74 @@
-//Anzahl anzuzeigender Spieler
-var amt_playershow = document.getElementById("anzahl-spieler");
-// Tabelle mit ID "scoreboard" in html suchen
-var tablecontainer = document.getElementById("section3_table");
-//andere stats
-var total_players = document.getElementById("total_players");
-var rounds_total = document.getElementById("rounds_total");
-var points_total = document.getElementById("points_total");
-var avg_rpg = document.getElementById("avg_rpg");
-//andere benötigte Variablen
-var responseJson = new Array;
-var player_scores = new Array;
-var players_total = 0;
-var round_sum = 0;
-var points_sum = 0;
-var rpg_avg = 1;
-  
-/*---Starten der Seite----------------------------------------------------------------------------------------------*/
+/*let responseJson = new [];
 
-//Ausgangsfunktion beim Laden der Seite
-loadData();
-players();
-rounds();
-points();
-rpg();
+async function LoadData(){
+  let response = await fetch('/stats_table');
+  responseJson = await response.json();
+  console.log(responseJson);
+  setProfileData(responseJson);
+}*/
+
+const player_scores = [
+    [1, 1, 'DeezNuts', '11940', '107'],
+    [2, 3, 'DickS.Ding', '10780', '118'],
+    [3, 2, 'AnnaNass', '10760', '115'],
+    [4, 5, 'KaiSer', '9755', '99'],
+    [5, 4, 'JackDanielS', '8920', '104'],
+    [6, 11, 'BernhardDiener', '8470', '89'],
+    [7, 8, 'OlgaMachslochoff', '7235', '76'],
+    [8, 7, 'ReinerZufall', '7230', '64'],
+    [9, 10, 'HeideWitzka', '7115', '72'],
+    [10, 6, 'GeorgAsmus', '6490', '74'],
+    [11, 9, 'JoeKer', '6225', '67'],
+    [12, 12, 'PearlHuber', '5945', '58'],
+    [13, 13, 'MaxMustermann', '5855', '60'],
+    [14, 14, 'SabineMusterfrau', '5825', '50'],
+    [15, 15, 'PeterParker', '5805', '55'],
+    [16, 36, 'HannahMontana', '5720', '62'],
+    [17, 16, 'BruceWayne', '5585', '61'],
+    [18, 19, 'WalterWhite', '5430', '75'],
+    [19, 18, 'JessePinkman', '5385', '70'],
+    [20, 21, 'WinniePooh', '5205', '80'],
+    [21, 20, 'MickeyMouse', '5190', '61'],
+    [22, 23, 'DonaldDuck', '5055', '51'],
+    [23, 22, 'DaisyDuck', '5030', '28'],
+    [24, 25, 'BugsBunny', '4960', '57'],
+    [25, 24, 'DaffyDuck', '4915', '52'],
+    [26, 27, 'RoadRunner', '4805', '53'],
+    [27, 26, 'WileE.Coyote', '4755', '52'],
+    [28, 29, 'ScoobyDoo', '4655', '48'],
+    [29, 28, 'ShaggyRogers', '4610', '37'],
+    [30, 31, 'BartSimpson', '4510', '1337'],
+    [31, 30, 'HomerSimpson', '4485', '50'],
+    [32, 33, 'MargeSimpson', '4380', '49'],
+    [33, 32, 'LisaSimpson', '4355', '38'],
+    [34, 37, 'PatrickStar', '4270', '42'],
+    [35, 34, 'SpongeBobSquarePants', '4240', '45'],
+    [36, 35, 'SonicTheHedgehog', '4200', '42'],
+    [37, 17, 'Dr.Eggman', '4120', '47'],
+    [38, 40, 'BugsBunny_2nd', '3995', '43'],
+    [39, 38, 'HarrySchotter', '3870', '39'],
+    [40, 39, 'Mjölnir', '3835', '29']
+  ];
   
-/*---EventListener--------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------*/
+  
+  //Anzahl anzuzeigender Spieler
+  var amt_playershow = document.getElementById("anzahl-spieler");
+  // Tabelle mit ID "scoreboard" in html suchen
+  var tablecontainer = document.getElementById("section3_table");
+  //andere stats
+  var total_players = document.getElementById("total_players");
+  var rounds_total = document.getElementById("rounds_total");
+  var points_total = document.getElementById("points_total");
+  var avg_ppr = document.getElementById("avg_ppr");
+  
+/*------------------------------------------------------------------------------------------------------------------*/
   
   amt_playershow.addEventListener("change", () => {
     buildTable();
   });
   
-/*---Funktionen-----------------------------------------------------------------------------------------------------*/
-
-async function loadData(){
-  let response = await fetch('/statsTable');
-  responseJson = await response.json();
-  playerscores();
-};
-
-async function players(){
-  let response = await fetch('/playersTotal');
-  responseJson = await response.json();
-  players_total = responseJson[0].players_total;
-  playerOutput();
-};
-
-async function rounds(){
-  let response = await fetch('/roundSum');
-  responseJson = await response.json();
-  round_sum = responseJson[0].round_sum;
-  roundOutput();
-};
-
-async function points(){
-  let response = await fetch('/scoreSum');
-  responseJson = await response.json();
-  points_sum = responseJson[0].score_sum;
-  pointOutput();
-};
-
-async function rpg(){
-  let response = await fetch('/avgRPG');
-  responseJson = await response.json();
-  rpg_avg = responseJson[0].average_rounds_per_game;
-  rpgOutput();
-};
-
-  function playerscores(){
-    var i = 0;
-    for (const row of responseJson) {
-      player_scores[i] = [row.platzierung, row.user_id, row.spielername, row.punktzahl, row.gespielte_runden];
-      i++;
-    }
-    buildTable();
-  };
+/*------------------------------------------------------------------------------------------------------------------*/
 
   function buildTable(){
     amt_show = amt_playershow.value;
@@ -128,23 +123,32 @@ async function rpg(){
     tablecontainer.appendChild(table);
   };
 
-  function playerOutput(){
-    total_players.textContent = players_total;
+/*------------------------------------------------------------------------------------------------------------------*/
+  
+  buildTable();
+
+  player_id_max = 0;
+  for (let index = 0; index < player_scores.length; index++) {
+    player_id_max = Math.max(player_scores[index][1], player_id_max);  
   }
-
-  function roundOutput(){
-    rounds_total.textContent = round_sum;
+  total_players.textContent = player_id_max;
+  
+  rounds_sum = 0;
+  for(let index = 0; index < player_scores.length; index++){
+    rounds_sum = rounds_sum + parseInt(player_scores[index][4]);
   }
-
-  function pointOutput(){
-    points_total.textContent = points_sum;
+  rounds_total.textContent = rounds_sum;
+  
+  points_sum = 0;
+  for(let index = 0; index < player_scores.length; index++){
+    points_sum = points_sum + parseInt(player_scores[index][3]);
   }
+  points_total.textContent = points_sum;
+  
+  ppr = (points_sum/rounds_sum).toFixed(0);
+  avg_ppr.textContent = ppr;
 
-  function rpgOutput(){
-    avg_rpg.textContent = parseInt(rpg_avg);
-  } 
-
-/*---Allgemeines----------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------*/
 hamburger = document.querySelector("#hamburger");
 hamburger.onclick = function(){
     navBar = document.querySelector(".nav-bar");
