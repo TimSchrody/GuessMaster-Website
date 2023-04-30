@@ -39,10 +39,6 @@ app.use(session({
 app.use(express.urlencoded({ extended: true }));
 
 
-app.get("/Aboutus", (req,res) => {
-    res.render("AboutUs");
-});
-
 app.get("/Blog", (req,res) => {
     res.render("Blog");
 });
