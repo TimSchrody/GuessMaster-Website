@@ -36,6 +36,41 @@ window.addEventListener("scroll", function(){
     }
 });
 
+
+var responseJson = new Array;
+var players_total = 0;
+var round_sum = 0;
+var score_sum = 0;
+
+async function total_players(){
+    
+    let response = await fetch('/playersTotal');
+    responseJson = await response.json();
+    players_total = responseJson[0].players_total;
+    document.getElementById("sec3_data3").innerHTML = players_total;
+  };
+
+  async function total_rounds(){
+    
+    let response = await fetch('/roundSum');
+    responseJson = await response.json();
+    round_sum = responseJson[0].round_sum;
+    document.getElementById("sec3_data1").innerHTML = round_sum;
+  };
+
+
+  async function total_score(){
+    let response = await fetch('/scoreSum');
+    responseJson = await response.json();
+    score_sum = responseJson[0].score_sum;
+    document.getElementById("sec3_data2").innerHTML = score_sum;
+  };
+
+
+total_players();
+total_rounds();
+total_score();
+
 //TYPE WRITER
 class TypeWriter {
 constructor(txtElement, words, wait = 3000) {
@@ -104,12 +139,12 @@ new TypeWriter(txtElement, words, wait);
 }
 
 
-
+/*
 let valueDisplays = document.querySelectorAll(".sec3_data");
 let interval = 4000;
 valueDisplays.forEach((valueDisplay) => {
 let startValue = 0;
-let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+let endValue = parseInt(players_total);
 let duration = Math.floor(interval / endValue);
 let counter = setInterval(function () {
 startValue += 1;
@@ -118,4 +153,4 @@ if (startValue == endValue) {
 clearInterval(counter);
 }
 }, duration);
-});
+});*/
