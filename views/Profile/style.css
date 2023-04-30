@@ -225,7 +225,13 @@ body{
     cursor: none;
 }
 
+.nav-bar a:hover{
+    text-decoration: none;
+}
 
+.nav-bar {
+    margin-top: 15px;
+  }
 
 #footer {
     margin-top: 100px;
