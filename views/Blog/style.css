@@ -111,11 +111,11 @@ body{
 #heading {
   height: 100vh;
   width: 100%;
-  background-image: url('/Main/src/MainImages/landscape_autumn.jpg');
+  background-image: url('/Main/src/MainImages/landscape_wood.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-  background-position: bottom;
+  background-position: top;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,7 +123,7 @@ body{
 
 #heading_content{
   text-align: center;
-  color: var(--white);
+  color: var(--dark);
   margin-top: -50px;
 }
 
@@ -144,7 +144,7 @@ body{
   font-size: 15px;
   position: relative;
   margin: 0 auto;
-  background-color: rgb(93, 86, 42);
+  background-color: rgb(17, 115, 116);
 }
 
 #timeline::after {
@@ -198,6 +198,13 @@ body{
   background-color: white;
   position: relative;
   border-radius: 6px;
+
+  font-size: 18px;
+  color: var(--dark);
+}
+
+#content h1{
+  margin-bottom: 15px;
 }
 
 #content img {
