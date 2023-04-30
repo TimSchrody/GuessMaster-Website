@@ -531,6 +531,36 @@ body{
     margin: 2vh 0 1vh 0;
   }
 
+  #section4{
+    padding: 100px 0;
+  }
+
+  #section4_content{
+    display: unset;
+  }
+  
+  #sec4_img{
+    flex: none;
+    width: 60vw;
+    margin: 50px 20vw;
+    padding: 0;
+  }
+
+  #sec4_text{
+    text-align: center;
+    width: 60vw;
+    margin: 0 20vw;
+  }
+
+  #sec4_text h1{
+    text-align: center;
+    margin: 0 0 10px 0;
+  }
+
+  #sec4_text p{
+    text-align: center;
+  }
+
   #section5_content {
     flex-wrap: wrap;
     gap: 30px;
@@ -633,6 +663,16 @@ body{
   .sec3_box img{
     height: 5vw;
     width: 5vw;
+  }
+
+  #sec4_img{
+    width: 80vw;
+    margin: 50px 10vw;
+  }
+
+  #sec4_text{
+    width: 80vw;
+    margin: 0 10vw;
   }
 
   #section5_content {
