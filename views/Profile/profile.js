@@ -5,7 +5,6 @@ let responseJson = [];
 async function LoadData(){
     let response = await fetch('/profileData');
     responseJson = await response.json();
-    console.log(responseJson);
     setProfileData(responseJson);
 }
 
