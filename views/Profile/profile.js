@@ -30,7 +30,7 @@ function setProfileData(profileData){
             highscore = matchData.score;
         }
     });
-    
+
     if(numberOfGames !== 0){
         winrate = ((numberOfWins/numberOfGames)*100).toFixed(1);
         averagePoints = numberOfPoints/numberOfRounds;
@@ -121,16 +121,29 @@ function setWinrate(winrate){
 
 function removeMatchHistoty(){
     document.querySelectorAll('.timeline-element').forEach(e => e.remove());
+    document.querySelectorAll('.timeline-text').forEach(e => e.remove());
 }
 
 function addMatchHistoty(){
     //max 15 matches??
     // if there are no matches :display text
+    let numberOfGames = 0;
+
+
     if(responseJson.length !== 0){
         responseJson.forEach(matchData =>{
-            let date = convertDate(matchData.date);
-            addMatch(matchData.mode,date,matchData.rounds,matchData.score,matchData.ranking);
+            numberOfGames++;
+            if(numberOfGames < 11){
+                let date = convertDate(matchData.date);
+                addMatch(matchData.mode,date,matchData.rounds,matchData.score,matchData.ranking);
+            }
         });
+    } else{
+        let hr = document.getElementById("divider");
+        let p = document.createElement("p");
+        p.setAttribute("class", "timeline-text");
+        p.innerText = "No Matches Played";
+        hr.parentNode.insertBefore(p, hr.nextSibling);
     }
 }
 
@@ -141,15 +154,12 @@ function convertDate(date){
 
 
 function updateMatchHistory(){
-    let matchHistoryContainer = document.getElementById("matchHistoryContainer");
     let matchHistoryButton = document.getElementById("MatchHistoryButton");
 
     if(!matchHistoryIsShown){
         matchHistoryButton.innerText = "Hide Match History";
         let hr = document.createElement("hr");
         hr.setAttribute("id", "divider");
-
-
         matchHistoryButton.parentNode.insertBefore(hr, matchHistoryButton.nextSibling);
         addMatchHistoty();   
         matchHistoryIsShown = true;
@@ -159,7 +169,6 @@ function updateMatchHistory(){
         let hr = document.getElementById("divider");
         hr.parentNode.removeChild(hr);
         matchHistoryIsShown = false;
-
     }
 }
 

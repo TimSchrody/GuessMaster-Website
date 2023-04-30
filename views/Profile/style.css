@@ -120,7 +120,7 @@
 #personalStats{
     height: 100vh;
     width: 100%;
-    background-image: url('src/Landscape_jungle.jpg');
+    background-image: url('src/landscape_jungle.jpg');
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
@@ -219,6 +219,11 @@ body{
 
 .timeline-element table{
     width: 90%;
+}
+
+.timeline-text{
+    font-size: 18px;
+    text-align: center;
 }
 
 #MatchHistoryButton{
