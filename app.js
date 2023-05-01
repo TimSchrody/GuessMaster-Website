@@ -2,8 +2,8 @@ const express = require("express");
 const path = require('path');
 const mysql = require("mysql2");
 const dotenv = require("dotenv");
-const session = require("express-session");
 const bcrypt = require('bcryptjs');
+const { profile } = require("console");
 
 dotenv.config({ path: './.env'});
 
@@ -15,6 +15,7 @@ const db = mysql.createConnection({
 });
 
 const app = express();
+let userN = "";
 
 //neccessairy for style.css
 const publicDirectory = path.join(__dirname + '/views');
@@ -27,14 +28,6 @@ app.use(express.json());
 
 //Set View Engine for NodeJS
 app.set('view engine', 'hbs');
-
-//Session ...
-app.use(session({
-    secret: "geheimnis", // ein zufälliger Schlüssel für die Verschlüsselung der Daten
-    resave: false,
-    saveUninitialized: true
-}));
-
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -60,20 +53,8 @@ app.get("", (req,res) => {
 });
 
 app.get("/Logout", (req, res) => {
-    req.session.destroy();
-    //req.session.loggedIn = false;
-    //req.session.username = null;
+    userN = "";
     res.redirect("/"); 
-});
-
-app.get("/Profile", (req,res) => {
-    if (req.session.loggedIn) {
-        const username = req.session.username;
-        res.render("Profile");
-
-    } else {
-        res.redirect("/"); 
-    }
 });
 
 
@@ -98,9 +79,10 @@ app.post("/Login", (req, res) => {
                 
             } else if(await bcrypt.compare(req.body.password, results[0].password)){ //Check if password is correct
         
-                req.session.loggedIn = true;
-                req.session.username = username;
-                res.redirect("/Profile");
+                userN = username;
+                return res.render('Profile', {
+                    responseUser: userN
+                });
     
             } else {
                 return res.render('Login', {
@@ -118,7 +100,7 @@ app.post("/Login", (req, res) => {
 
 app.get('/profileData',(req, res) => {
     db.query(`SELECT user.name, game.rounds, game.mode, game.date, score.score, score.ranking FROM user 
-              JOIN score ON score.user_id = user.id JOIN game ON game.idgame = score.game_id WHERE name = '${req.session.username}' ORDER BY game.date DESC;`, (error, results, fields) => {
+              JOIN score ON score.user_id = user.id JOIN game ON game.idgame = score.game_id WHERE name = '${userN}' ORDER BY game.date DESC;`, (error, results, fields) => {
       if (error) {
         console.error('Fehler bei der Abfrage: ', error);
       } 
@@ -130,9 +112,10 @@ app.get('/profileData',(req, res) => {
 
 app.get('/profileName',(req,res)=> {
 
-    res.json(req.session.username);
+    res.json(userN);
 
 });
+
 
 app.get("/statsTable", (req, res) => {
     db.query(`SELECT ROW_NUMBER() OVER (ORDER BY SUM(s.score) DESC) AS platzierung, u.id AS user_id, u.name AS spielername, SUM(s.score) AS punktzahl, SUM(g.rounds) AS gespielte_runden FROM score s INNER JOIN user u ON s.user_id = u.id INNER JOIN game g ON s.game_id = g.idgame GROUP BY s.user_id, u.name ORDER BY punktzahl DESC LIMIT 40`, async (error, results) => {

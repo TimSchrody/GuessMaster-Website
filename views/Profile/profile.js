@@ -1,16 +1,15 @@
 let matchHistoryIsShown = false;
 let responseJson = [];
-let reponseUserName = [];
+let responseUserName = "";
 
 //Function thats executed when loading the page
 async function LoadData(){
     let response = await fetch('/profileData');
     responseJson = await response.json();
 
-    //Needs to be added separate for User with no Database entry
-    let UserName = await fetch('/profileName');
-    reponseUserName = await UserName.json();
 
+    let UserName = await fetch('/profileName');
+    responseUserName = await UserName.json();
     setProfileData(responseJson);
 }
 
@@ -85,8 +84,8 @@ function addMatch(mode, date, rounds, score, rank){
 function setUsername(){
     let username1 = document.getElementById("username1");
     let username2 = document.getElementById("username2");
-    username1.innerText = reponseUserName;
-    username2.innerText = reponseUserName;
+    username1.innerText = responseUserName;
+    username2.innerText = responseUserName;
 }
 
 function setWinCount(numberOfWins){
