@@ -167,8 +167,12 @@ body{
     align-self: center;
 }
 
+#matchHistoryCard{
+    overflow: hidden;
+}
+
 #timeline{
-    margin-left: 30px;
+    margin-left: 1%;
     width: 90%;
     border-left:2px solid #000;
     padding: 0 20px 0 30px;
@@ -180,7 +184,7 @@ body{
     border:1px solid #000;
     line-height: 1.7;
     position: relative;
-    height: 120px;
+    min-height: 120px;
     margin-bottom: 20px;
 }
 .timeline-element:before{
@@ -218,7 +222,8 @@ body{
 }
 
 .timeline-element table{
-    width: 90%;
+    table-layout:fixed;
+    width: 100%;
 }
 
 .timeline-text{
@@ -269,6 +274,65 @@ body{
     text-decoration: none;
     float: left;
   }
+
+
+@media only screen and (max-width: 991px){
+
+    .timeline-element table{
+        border-collapse: collapse;
+        width: 138%;
+        margin-left: -10px;
+        margin-top: 10px;
+    }
+
+    .timeline-element h2{
+        width: 140%;
+        margin-left: -10px;
+         font-size: 22px;
+         font-style: bold;
+    }
+}
+
+@media only screen and (max-width: 575px){
+
+    .timeline-element table{
+        margin-left: -20px;
+    }
+
+    .timeline-element td{
+        vertical-align:top;
+    }
+    
+    .timeline-element h2{
+        margin-left: -20px;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 440px){
+
+    #timeline{
+        width: 110%;
+
+    }
+}
+
+@media only screen and (max-width: 300px){
+
+    .timeline-element{
+    }
+
+    .rounded-cricle{
+        width: 80%;
+
+    }
+    #MatchHistoryButton{
+        margin-left: -10px;
+    }
+    .main{
+        padding: 2px;
+    }
+}
 
 @media only screen and (max-width: 1320px){
     .header{
