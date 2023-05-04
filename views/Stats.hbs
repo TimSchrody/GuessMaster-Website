@@ -18,6 +18,9 @@
         document.querySelector(".cursor2").classList.remove("increase");
       }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="cursor"></div>
@@ -46,7 +49,7 @@
     <div id="section1">
       <div id="section1_content">
         <h1>Hall of Fame</h1>
-        <pb>Thank you for being a part of the GuessMaster community!</pb>
+        <p>Thank you for being a part of the GuessMaster community!</p>
       </div>
     </div> 
 
@@ -77,7 +80,7 @@
       <h1>LEADERBOARD</h1>
       <selectamount>
         <label for="anzahl-spieler"><br>Players to be displayed:</label>
-        <select onmouseover="cursorBig()" onmouseout="cursorSmall()" id="anzahl-spieler">
+        <select id="anzahl-spieler">
           <option value="5">5</option>
           <option value="10" selected>10</option>
           <option value="25">25</option>
@@ -97,7 +100,7 @@
     <div id="footer">
       <div id="footerlink">
         <ul>
-          <li><a onmouseover="cursorBig()" onmouseout="cursorSmall()" href="/ContactUs">Mail us</a></li>
+          <li><a onmouseover="cursorBig()" onmouseout="cursorSmall()" href="/ContactUs">Contact Us</a></li>
           <li><a onmouseover="cursorBig()" onmouseout="cursorSmall()" href="https://github.com/Tiaaam/GuessMaster">Our GitHub</a></li>
         </ul>
       </div>

@@ -40,6 +40,10 @@ body{
   background-color: var(--white);
 }
 
+#logo{
+  z-index: 6;
+}
+
 #logo img{
   height: 60px;
 }
@@ -149,11 +153,12 @@ body{
     font-size: 100px;
     font-weight: bold;
     color: var(--dark);
+    margin-top: 130px;
   }
 
-  #section1_content pb{
+  #section1_content p{
     margin: 20px 0 20px 0;
-    font-size: 28px;
+    font-size: 18px;
   }
 
 
@@ -192,12 +197,14 @@ body{
   #sec2_left h1{
     color: var(--yellow);
     text-align: left;
+    font-weight: bold;
   }
   
   #sec2_left h2{
     font-size: 20px;
     color: var(--white);
     text-align: left;
+    font-weight: lighter;
     margin-bottom: 20px;
   }
   
@@ -244,34 +251,42 @@ body{
   #section3 option {
     background-color: var(--white);
   }
-  #section3 option::selection {
-    background-color: red;;
-  }
 
   #section3_table {
-    border-collapse: collapse;
+    margin-top: 20px;
     width: 100%;
     text-align: center;
     display: flex;
     justify-content: center;
   }
 
+  #section3_table table{
+    border-collapse: collapse;
+    border-radius: 7px;
+    overflow: hidden;
+  }
+
   #section3 th, td{
-    border: 3px solid #cdcdcd;
     text-align: center;
-    padding: 8px;
+    padding: 12px 40px;
   }
   
   #section3 th{
     font-size: 115%;
-    background-color: #d5d5d5;
+    background-color: var(--red);
+    color: white
+  }
+
+  #section3 tr{
+    border-bottom: 1px solid #bababa;
+    border-top: 1px solid #bababa;
   }
   
   #section3 tr:nth-child(odd) {
-    background-color: #cdcdcd;
+    background-color: #e3e3e3;
   }
 
-  #section3 tr:nth-child(1) {
+  /*#section3 tr:nth-child(1) {
     background-color: gold;
   }
   #section3 tr:nth-child(2) {
@@ -279,6 +294,9 @@ body{
   }
   #section3 tr:nth-child(3) {
     background-color: #cd7f32;
+  }*/
+
+  #section3 tr:last-of-type{
   }
   
   #section3 h4{
@@ -287,9 +305,13 @@ body{
     font-size: 16px;
     text-align: center;
   }
+
+  #section3_content{
+    margin-bottom: 15px;
+  }
   
   #section3 p{
-    margin: 70px 0 40px 0;
+    margin: 70px 5vw 40px 5vw;
     font-size: 20px;
     text-align: center;
   }
@@ -344,6 +366,10 @@ body{
 @media only screen and (max-width: 1100px){
   .header{
       padding: 0 30px;
+  }
+
+  #section1_content h1{
+    font-size: 80px;
   }
 }
 
@@ -414,5 +440,33 @@ body{
 
   .nav-bar ul li a {
       margin-bottom: 12px;
+  }
+
+  #section3 th, td{
+    padding: 12px 25px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+
+  #section1_content h1{
+    font-size: 12vw;
+  }
+
+  #sec2_thanks{
+    width: 90%;
+  }
+
+  #sec2_left h1{
+    text-align: center;
+  }
+  
+  #sec2_left h2{
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  #section3 th, td{
+    padding: 12px 10px;
   }
 }

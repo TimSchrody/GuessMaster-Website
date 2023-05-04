@@ -228,7 +228,7 @@ body{
 #section2 h4{
   color: var(--yellow);
   font-weight: lighter;
-  font-size: 12px;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -308,7 +308,7 @@ body{
 }
 
 #section3 p{
-  margin: 70px 0 40px 0;
+  margin: 70px 5vw 40px 5vw;
   font-size: 20px;
   text-align: center;
 }
@@ -334,7 +334,7 @@ body{
 #section4 h4{
   color: var(--yellow);
   font-weight: lighter;
-  font-size: 12px;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -382,7 +382,7 @@ body{
 }
 
 #sec4_moreblogs_text{
-  margin: 70px 0 40px 0;
+  margin: 70px 5vw 40px 5vw;
   font-size: 20px;
   color: var(--white);
   text-align: center;
@@ -464,7 +464,7 @@ body{
 }
 
 #section5 p{
-  margin: 70px 0 40px 0;
+  margin: 70px 7vw 40px 7vw;
   font-size: 20px;
   text-align: center;
 }
@@ -709,11 +709,15 @@ body{
 @media screen and (max-width: 660px) {
 
   #sec2_info{
-    margin: 10vw 2vw 2vw 2vw;
+    margin: 10vw 5vw 2vw 5vw;
   }
 
   #section1_content h1{
     font-size: 12vw;
+  }
+
+  #section2 p{
+    padding: 0 5vw;
   }
 
   #section3_content {
@@ -730,8 +734,8 @@ body{
     width: 10vw;
   }
   .sec5_box {
-    width: 70vw;
-    margin: 2vh 15vw;
+    width: 90vw;
+    margin: 2vh 0vw 2vh 5vw;
     font-size: 8px;
   }
 }

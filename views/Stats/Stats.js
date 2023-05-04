@@ -88,7 +88,7 @@ async function rpg(){
     const tableHeadRow = document.createElement('tr');
   
     //Header bzw. Überschriften der Zeilen festlegen
-    let tableHeaders = ["worldwide ranking", "playername", "points", "rounds played"];
+    let tableHeaders = ["Ranking", "Playername", "Points", "Rounds"];
   
     // Tabellenkopf erstellen
     for (let i = 0; i < tableHeaders.length; i++) {

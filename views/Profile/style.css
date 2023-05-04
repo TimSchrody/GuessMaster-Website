@@ -33,6 +33,10 @@
 .header.scroll{
     background-color: var(--white);
 }
+
+#logo{
+    z-index: 6;
+  }
   
   #logo img{
     height: 60px;
@@ -165,6 +169,7 @@ body{
 
 .rounded-cricle{
     align-self: center;
+    margin-top: 20px;
 }
 
 #matchHistoryCard{
@@ -215,6 +220,7 @@ body{
 .timeline-element h2{
     margin:0;
     text-transform: uppercase;
+    color: #00576a;
 }
 
 .timeline-element h3{
@@ -233,6 +239,13 @@ body{
 
 #MatchHistoryButton{
     cursor: none;
+    padding: 13px 24px;
+  border: 2px solid var(--blue);
+  background-color: transparent;
+  border-radius: 50px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .nav-bar a:hover{
