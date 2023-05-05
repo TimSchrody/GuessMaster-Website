@@ -267,6 +267,13 @@
     padding: 0;
     overflow: hidden;
   }
+
+  #footer a{
+    display: block;
+    text-align: left;
+    padding: 14px 16px;
+    color: rgb(124, 124, 124);
+  }
   
   #footer p {
     display: block;
